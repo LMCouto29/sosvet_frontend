@@ -22,7 +22,7 @@ import { AnimalUpdateComponent } from './animal/animal-update/animal-update.comp
 import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { AnimalCrudComponent } from './views/animal-crud/animal-crud.component';
-import { QuestionComponent } from './question/Question.component';
+import { QuestionComponent } from './question/question.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HomeComponent } from './views/home/home.component';
