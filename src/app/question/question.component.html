@@ -1,0 +1,25 @@
+<mat-card class="home mat-elevation-z3">
+    <mat-card-title class="title">
+      Bem -Vindo ! 
+    </mat-card-title>
+    <mat-card-subtitle class="subtitle">
+      SoSVeT - Pré-Triagem
+    </mat-card-subtitle>
+</mat-card>
+    <mat-card class="home mat-elevation-z2">
+        <mat-card-content class ="question">
+            {{question.Description}}
+            <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+            [(ngModel)]="respUser">
+            <mat-radio-button class="example-radio-button" *ngFor="let option of options" [value] = "option">
+                {{option}}
+            </mat-radio-button>
+        </mat-radio-group>
+        
+        </mat-card-content>
+      
+    </mat-card>
+ 
+    <button class="btn" mat-raised-button (click)="getQuestion()" color="primary">
+        Submeter
+    </button>
