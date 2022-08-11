@@ -29,6 +29,7 @@ import { HomeComponent } from './views/home/home.component';
 import { AnimalReadComponent } from './animal/animal-read/animal-read.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { MatRadioModule } from '@angular/material/radio';
     AppRoutingModule,
     MatInputModule,
     MatCheckboxModule,
-    MatRadioModule
+    MatRadioModule,
+    MatProgressSpinnerModule,
   ],
   exports: [
     RouterModule
