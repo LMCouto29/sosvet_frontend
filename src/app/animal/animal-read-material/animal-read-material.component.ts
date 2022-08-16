@@ -19,7 +19,7 @@ export class AnimalReadMaterialComponent implements AfterViewInit, OnInit {
   animalService: AnimalService
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name', 'price'];
+  displayedColumns = ['id', 'name', 'owner'];
 
   ngOnInit() {
     this.dataSource = new AnimalReadMaterialDataSource(this.animalService);

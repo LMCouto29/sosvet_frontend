@@ -1,9 +1,9 @@
 export interface Animal {
-    objectId?: string
-    name: string
-    spicies: string
-    breed : string
-    age:number
-    owner:string
-    contact:string
+    IdAnimal?: string
+    Name: string
+    Spicies: string
+    Breed : string
+    Age:number
+    Owner:string
+    Contact:string
 }

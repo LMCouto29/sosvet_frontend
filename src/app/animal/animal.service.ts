@@ -9,8 +9,8 @@ import { map, catchError } from "rxjs/operators";
   providedIn: "root",
 })
 export class AnimalService {
-  // baseUrl = "https://localhost:44379/api/Animal";
-  baseUrl = "http://localhost:3000/animals";
+   //baseUrl = "https://localhost:44379/api/Animal";
+  baseUrl = "https://sosvet-api.herokuapp.com/api/Animal";
   
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
@@ -47,7 +47,7 @@ export class AnimalService {
   }
 
   update(animal: Animal): Observable<Animal> {
-    const url = `${this.baseUrl}/${animal.objectId}`;
+    const url = `${this.baseUrl}/${animal.IdAnimal}`;
     return this.http.put<Animal>(url, animal).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))

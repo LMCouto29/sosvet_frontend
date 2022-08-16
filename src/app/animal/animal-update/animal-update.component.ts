@@ -19,7 +19,7 @@ export class AnimalUpdateComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const id = this.route.snapshot.params['objectId'];
+    const id = this.route.snapshot.params['IdAnimal'];
     this.animalService.readById(id).subscribe((animal) => {
       this.animal = animal;
     });

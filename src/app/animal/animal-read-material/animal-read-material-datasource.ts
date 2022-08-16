@@ -72,8 +72,8 @@ export class AnimalReadMaterialDataSource extends DataSource<Animal> {
     return data.sort((a, b) => {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
-        case 'name': return compare(a.name, b.name, isAsc);
-        case 'id': return compare(+a.objectId, +b.objectId, isAsc); // falar com o Marcus
+        case 'name': return compare(a.Name, b.Name, isAsc);
+        case 'id': return compare(+a.IdAnimal, +b.IdAnimal, isAsc); // falar com o Marcus
         default: return 0;
       }
     });

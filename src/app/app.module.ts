@@ -30,6 +30,8 @@ import { AnimalReadComponent } from './animal/animal-read/animal-read.component'
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { QuestiontwoComponent } from './questiontwo/questiontwo.component';
+
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     FooterComponent,
     NavComponent,
     HomeComponent,
+    QuestiontwoComponent
+    
     
   ],
   imports: [

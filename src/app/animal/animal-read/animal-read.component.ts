@@ -1,6 +1,7 @@
 import { AnimalService } from '../animal.service';
 import { Animal } from '../animal.model';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { outputAst } from '@angular/compiler';
 
 @Component({
   selector: 'app-animal-read',
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./animal-read.component.css']
 })
 export class AnimalReadComponent implements OnInit {
+
 
   animals: Animal[]
   displayedColumns = ['name', 'spicies', 'breed', 'owner','contact','action']

@@ -11,13 +11,13 @@ import { Router } from '@angular/router';
 export class AnimalCreateComponent implements OnInit {
 
   animal: Animal = {
-    objectId: "",
-    name: "",
-    spicies: "",
-    breed : "",
-    age:0,
-    owner:"",
-    contact:"",
+    IdAnimal: "",
+    Name: "",
+    Spicies: "",
+    Breed : "",
+    Age:0,
+    Owner:"",
+    Contact:"",
   }
 
   constructor(private animalService: AnimalService,
@@ -29,7 +29,7 @@ export class AnimalCreateComponent implements OnInit {
 
   createAnimal(): void {
     this.animalService.create(this.animal).subscribe(() => {
-      this.animalService.showMessage('Produto criado!')
+      this.animalService.showMessage('Animal criado!')
       this.router.navigate(['/animal'])
     })
 

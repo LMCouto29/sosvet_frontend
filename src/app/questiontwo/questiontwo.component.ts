@@ -1,21 +1,22 @@
 import { Question } from '../question/question.model';
 import { UserAnswer } from './user-answer.model'; 
-import { QuestionService } from './../question/question.service';
-import { Component, Input, OnInit } from '@angular/core';
+import { QuestionService } from '../question/question.service';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpParams } from '@angular/common/http';
 import { TmplAstRecursiveVisitor } from '@angular/compiler';
 import { Animal } from '../animal/animal.model';
 
 @Component({
-  selector: 'app-question',
-  templateUrl: './question.component.html',
-  styleUrls: ['./question.component.css']
+  selector: 'app-questiontwo',
+  templateUrl: './questiontwo.component.html',
+  styleUrls: ['./questiontwo.component.css']
 })
-export class QuestionComponent implements OnInit {
+export class QuestiontwoComponent implements OnInit {
 
 respUser: Boolean; 
 options: string[] = ['true', 'false'];
+
 
 
 
@@ -40,6 +41,9 @@ userAnswer:UserAnswer = {
     
   }
 
+  
+
+
   constructor(private questionService: QuestionService,
     private router: Router) { }
 
@@ -54,6 +58,7 @@ getQuestion() { // mudar GET para get
    this.userAnswer.questionId = this.question.Id
     this.questionService.getQuestion(this.question,this.userAnswer).subscribe(res=> {
       this.question = res
+     
       if(this.question.IsLast == true || this.question?.Id == "" || this.userAnswer.value ==true){
         this.questionService.showMessage('Pré-Triagem criada!' + this.question.Message) 
         this.router.navigate(['/animal']  )
@@ -62,14 +67,14 @@ getQuestion() { // mudar GET para get
       this.questionService.showMessage('Pré-Triagem criada!'+ this.question.Message) 
 
 
-      this.router.navigate(['/question'])
+      this.router.navigate(['/questiontwo'])
      
     })
 
   }
 
   cancel(): void {
-    this.router.navigate(['/question'])
+    this.router.navigate(['/questiontwo'])
   }
 }
 
