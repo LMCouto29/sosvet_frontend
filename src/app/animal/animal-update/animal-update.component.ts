@@ -1,7 +1,7 @@
 import { Animal } from "../animal.model";
 import { Router, ActivatedRoute } from "@angular/router";
 import { AnimalService } from "../animal.service";
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, OnInit, Output } from "@angular/core";
 
 @Component({
   selector: "app-animal-update",
@@ -18,6 +18,8 @@ export class AnimalUpdateComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
 
+  
+  
   ngOnInit(): void {
     const id = this.route.snapshot.params['IdAnimal'];
     this.animalService.readById(id).subscribe((animal) => {

@@ -33,6 +33,10 @@ const routes: Routes = [
     component: QuestionComponent
   },
   {
+    path: "question/:IdAnimal",
+    component: QuestionComponent
+  },
+  {
     path: "questiontwo",
     component: QuestiontwoComponent
   },
