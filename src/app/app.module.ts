@@ -31,6 +31,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { QuestiontwoComponent } from './questiontwo/questiontwo.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { QuestiontwoComponent } from './questiontwo/questiontwo.component';
     NavComponent,
     HomeComponent,
     QuestiontwoComponent
+    
     
     
   ],
@@ -71,6 +73,7 @@ import { QuestiontwoComponent } from './questiontwo/questiontwo.component';
     MatCheckboxModule,
     MatRadioModule,
     MatProgressSpinnerModule,
+    FlexLayoutModule
   ],
   exports: [
     RouterModule

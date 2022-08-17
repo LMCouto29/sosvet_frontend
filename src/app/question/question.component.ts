@@ -1,10 +1,10 @@
+import { Animal } from './../animal/animal.model';
 import { Question } from '../question/question.model';
-import { UserAnswer } from './user-answer.model'; 
+import { UserAnswer } from './user-answer.model';
 import { QuestionService } from './../question/question.service';
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { HttpParams } from '@angular/common/http';
-
+import { AnimalService } from '../animal/animal.service';
 
 @Component({
   selector: 'app-question',
@@ -13,79 +13,79 @@ import { HttpParams } from '@angular/common/http';
 })
 
 export class QuestionComponent implements OnInit {
-respUser: Boolean; 
-options: string[] = ['true', 'false'];
-@Input() IdAnimal : "";
+  respUser: Boolean;
 
+  options: string[] = [ 'true', 'false'];
+  @Input() IdAnimal: "";
 
-userAnswer:UserAnswer = {
-
-  value : false,
-  userId:"",
-  questionId:""
-
-}
+  userAnswer: UserAnswer = {
+    value: false,
+    userId: "",
+    questionId: ""
+  }
 
   question: Question = {
     Id: "",
     Description: "",
     IsPreScreening: true,
-    IsLast : true,
-    Order:0,
-    Group:"",
-    NextQuestion:0,
-    Message:"",
+    IsLast: true,
+    Order: 0,
+    Group: "",
+    NextQuestion: 0,
+    Message: "",
     Answers: true,
-    
+
   }
   public idAnimalUrl;
- 
-    constructor(private questionService: QuestionService,
-    private router: Router, private route: ActivatedRoute) {
-      //this.route.params.subscribe(params => this.idAnimalUrl = params['idAnimalUrl']);
-       
-      console.log('O Animal tem o Id' + this.idAnimalUrl)
-     }
 
-     
+  animal: Animal;
 
-      ngOnInit(): void {
- // const id = this.route.snapshot.params['IdAnimal'];
-  //console.log('IdAnimal' + id)
-  this.getQuestion();
+  constructor(private questionService: QuestionService,
+    private router: Router, private route: ActivatedRoute, private animalService: AnimalService) { 
+
+    const idAnimalUrl = this.route.snapshot.params['IdAnimal'];
+    if (idAnimalUrl) {
+      localStorage.setItem('idAnimal', idAnimalUrl);
+    }
+  }
+
+  ngOnInit(): void {
+    this.getQuestion();
+  }
+
+  getQuestion() { 
+
+    var idAnimalLocalStorage = localStorage.getItem('idAnimal')
+
+    this.getAnimalById(idAnimalLocalStorage);
+    console.log('idAnimalLocalStorage' + idAnimalLocalStorage)
+    this.getAnimalById(idAnimalLocalStorage);
+    this.userAnswer.value = this.respUser;
+    this.userAnswer.questionId = this.question.Id
+    this.userAnswer.userId = idAnimalLocalStorage
+    this.questionService.getQuestion(this.question, this.userAnswer).subscribe(res => {
+      this.question = res
       
-}
+      if (this.question.IsLast == true || this.question?.Id == "" || this.userAnswer.value == true) {
+        this.questionService.showMessage('Pré-Triagem criada!' + this.question.Message)
+        this.router.navigate(['/animal'])
 
+      } if (this.userAnswer.value == true)
+        this.questionService.showMessage('Pré-Triagem criada!' + this.question.Message)
 
-getQuestion() { // mudar GET para get
-  this.route.params.subscribe(params => {
+      this.router.navigate(['/question'])
 
-    this.idAnimalUrl = params['idAnimalUrl']
-  this.userAnswer.value = this.respUser;
-  this.userAnswer.questionId = this.question.Id
-  this.userAnswer.userId = this.idAnimalUrl
-   this.questionService.getQuestion(this.question,this.userAnswer).subscribe(res=> {
-     this.question = res
-     if(this.question.IsLast == true || this.question?.Id == "" || this.userAnswer.value ==true){
-       this.questionService.showMessage('Pré-Triagem criada!' + this.question.Message) 
-       this.router.navigate(['/animal']  )
-         
-     } if(this.userAnswer.value == true)
-     this.questionService.showMessage('Pré-Triagem criada!'+ this.question.Message) 
+    })
+  }
 
-
-     this.router.navigate(['/question'])
-    
-   })
-  })
-}
-  
+  // Ideia de chamar o animal pelo id, para exibir os dados no ecrã, mas não está a funcionar
+  getAnimalById(idAnimal) {
+    this.animalService.getAnimalById(idAnimal).subscribe(res => {
+      this.animal = res
+    })
+  }
 
   cancel(): void {
     this.router.navigate(['/question'])
   }
 }
-
-
-
-

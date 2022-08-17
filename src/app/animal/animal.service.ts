@@ -38,7 +38,16 @@ export class AnimalService {
     );
   }
 
-  readById(id: number): Observable<Animal> {
+  getAnimalById (id: number): Observable<Animal> {
+    const url = `${this.baseUrl}/${id}`;
+    return this.http.get<Animal>(url).pipe(
+      map((obj) => obj),
+      catchError((e) => this.errorHandler(e))
+    );
+  }
+
+
+  readById(id: Animal["IdAnimal"]): Observable<Animal> {
     const url = `${this.baseUrl}/${id}`;
     return this.http.get<Animal>(url).pipe(
       map((obj) => obj),
