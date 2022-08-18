@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './views/home/home.component';
 import { AnimalCrudComponent } from './views/animal-crud/animal-crud.component';
 import { QuestiontwoComponent } from './questiontwo/questiontwo.component';
+import { PreScreeningReadComponent } from './preScreening-read/preScreening-read.component';
 
 const routes: Routes = [
   {
@@ -39,6 +40,10 @@ const routes: Routes = [
   {
     path: "questiontwo",
     component: QuestiontwoComponent
+  },
+  {
+    path: "preScreening",
+    component: PreScreeningReadComponent
   },
 
 

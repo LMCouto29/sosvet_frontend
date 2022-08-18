@@ -6,13 +6,14 @@
         SoSVeT - Pré-Triagem, por favor, responda as perguntas abaixo:
     </mat-card-subtitle>
         
-        <mat-list role="Dados do Animal">
-             <h3> Dados do Animal :</h3>   
-            <mat-list-item role="listitem">Nome do Animal : {{animal.Name}} </mat-list-item>
-            <mat-list-item role="listitem">Idade : {{animal.Age}}</mat-list-item>
-            <mat-list-item role="listitem">Nome do Tutor: {{animal.Owner}}</mat-list-item>
-            <mat-list-item role="listitem">Contacto do Tutor : {{animal.Contact}}</mat-list-item>
-          </mat-list>   
+    <mat-list role="Dados do Animal">
+        <h3> Dados do Animal :</h3>   
+       <mat-list-item role="listitem">Nome do Animal : {{animal?.Name}} </mat-list-item>
+       <mat-list-item role="listitem">Idade : {{animal?.Age}}</mat-list-item>
+       <mat-list-item role="listitem">Nome do Tutor: {{animal?.Owner}}</mat-list-item>
+       <mat-list-item role="listitem">Contacto do Tutor : {{animal?.Contact}}</mat-list-item>
+     </mat-list>   
+   <mat-card-content>   
         <mat-card-content>
         <mat-card-content class="question">
             {{question.Description}}
@@ -29,7 +30,7 @@
     <div class="div-info-animal">
         <mat-label class="label-codigo-animal">Código do Animal: {{this.userAnswer.userId}}</mat-label>
     </div>
-</mat-card>
+
 
 
 <mat-label *ngIf="!question.Description"> Não foi possivel carregar as questões </mat-label>

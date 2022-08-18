@@ -17,6 +17,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import {PreScreeningReadMaterialComponent} from './preScreening-read-material/preScreening-read-material.component';
 import { AnimalReadMaterialComponent } from './animal/animal-read-material/animal-read-material.component';
 import { AnimalUpdateComponent } from './animal/animal-update/animal-update.component';
 import { MatTableModule } from '@angular/material/table';
@@ -26,6 +27,7 @@ import { QuestionComponent } from './question/question.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HomeComponent } from './views/home/home.component';
+import { PreScreeningReadComponent } from './preScreening-read/preScreening-read.component';
 import { AnimalReadComponent } from './animal/animal-read/animal-read.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
@@ -47,7 +49,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     FooterComponent,
     NavComponent,
     HomeComponent,
-    QuestiontwoComponent
+    QuestiontwoComponent,
+    PreScreeningReadComponent,
+    PreScreeningReadMaterialComponent
     
     
     

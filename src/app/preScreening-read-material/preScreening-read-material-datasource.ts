@@ -1,6 +1,6 @@
 import { OnInit } from '@angular/core';
-import { AnimalService } from '../animal.service';
-import { Animal } from '../animal.model';
+import { PreScreeningService } from '../preScreeningservice';
+import { PreScreening } from '../preScreening.model';
 import { DataSource } from '@angular/cdk/collections';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -12,12 +12,12 @@ import { Observable, of as observableOf, merge } from 'rxjs';
  * encapsulate all logic for fetching and manipulating the displayed data
  * (including sorting, pagination, and filtering).
  */
-export class AnimalReadMaterialDataSource extends DataSource<Animal> {
-  data: Animal[] = [];
+export class PreScreeningReadMaterialDataSource extends DataSource<PreScreening> {
+  data: PreScreening[] = [];
   paginator: MatPaginator;
   sort: MatSort;
 
-  constructor(private animalService: AnimalService) {
+  constructor(private preScreeningService: PreScreeningService) {
     super();
   }
 
@@ -26,12 +26,12 @@ export class AnimalReadMaterialDataSource extends DataSource<Animal> {
    * the returned stream emits new items.
    * @returns A stream of the items to be rendered.
    */
-  connect(): Observable<Animal[]> {
+  connect(): Observable<PreScreening[]> {
     // Combine everything that affects the rendered data into one update
     // stream for the data-table to consume.
-    this.animalService.read().subscribe(animal => {
-      this.data = animal;
-      console.log(animal)
+    this.preScreeningService.read().subscribe(preSecreening => {
+      this.data = preSecreening;
+      console.log(preSecreening)
     })
 
     const dataMutations = [
@@ -55,7 +55,7 @@ export class AnimalReadMaterialDataSource extends DataSource<Animal> {
    * Paginate the data (client-side). If you're using server-side pagination,
    * this would be replaced by requesting the appropriate data from the server.
    */
-  private getPagedData(data: Animal[]) {
+  private getPagedData(data: PreScreening[]) {
     const startIndex = this.paginator.pageIndex * this.paginator.pageSize;
     return data.splice(startIndex, this.paginator.pageSize);
   }
@@ -64,7 +64,7 @@ export class AnimalReadMaterialDataSource extends DataSource<Animal> {
    * Sort the data (client-side). If you're using server-side sorting,
    * this would be replaced by requesting the appropriate data from the server.
    */
-  private getSortedData(data: Animal[]) {
+  private getSortedData(data: PreScreening[]) {
     if (!this.sort.active || this.sort.direction === '') {
       return data;
     }
@@ -72,13 +72,12 @@ export class AnimalReadMaterialDataSource extends DataSource<Animal> {
     return data.sort((a, b) => {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
-        case 'name': return compare(a.Name, b.Name, isAsc);
-        case 'id': return compare(+a.IdAnimal, +b.IdAnimal, isAsc); // falar com o Marcus
+        case 'IdAnimal': return compare(a.IdAnimal, b.IdAnimal, isAsc);
+        case 'ownerName': return compare(+a.ownerName, +b.ownerName, isAsc); // falar com o Marcus
         default: return 0;
       }
     });
   }
-  
 }
 
 /** Simple sort comparator for example ID/Name columns (for client-side sorting). */
