@@ -10,9 +10,10 @@ import { map, catchError } from "rxjs/operators";
   providedIn: "root",
 })
 export class QuestionService {
+  [x: string]: any;
 
  
-  baseUrl = "https://sosvet-api.herokuapp.com/api/question/test";
+  baseUrl = "https://sosvet-api.herokuapp.com/api/question";
   
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
 

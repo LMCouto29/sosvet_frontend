@@ -16,10 +16,10 @@
       
     </mat-card>
  
-    <button class="btn" mat-raised-button (click)="getQuestion()" color="primary" option = "cardiologico">  
+    <button class="btn" mat-raised-button (ngclick)= "getQuestionByGroup(group)" group = "Cardiologico" Group color="primary">  
         Cardiologico
     </button>
-    <button class="btn" mat-raised-button (click)="getQuestion()" color="primary" option = "Respiratório">  
+    <button class="btn" mat-raised-button (ngclick)= "getQuestionByGroup(group)"    group = "Respiratorio" color="primary" >  
         Respiratório
     </button>
     

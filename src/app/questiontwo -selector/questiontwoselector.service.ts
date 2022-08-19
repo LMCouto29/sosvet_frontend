@@ -12,16 +12,16 @@ import { map, catchError } from "rxjs/operators";
 export class QuestiontwoSelectorService {
 
  
-  baseUrl = "https://sosvet-api.herokuapp.com/api/question/test";
+  baseUrl = "https://sosvet-api.herokuapp.com/api/question/Test?Group=?";
   
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
 
-  
-
-  getQuestion(question:Question,userAnswer:UserAnswer): Observable<Question> {
-    return this.http.post<Question>(this.baseUrl,userAnswer).pipe(
+  getQuestionByGroup (Group: string): Observable<Question> {
+    const url = `${this.baseUrl}=${Group}`;
+    return this.http.get<Question>(url).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
+
     );
   }
 

@@ -1,6 +1,6 @@
-import { Question} from '../questiontwo/questiontwo.model';
+import { Question } from '../question/question.model';
 import { UserAnswer } from './user-answer.model'; 
-import { QuestionService } from '../question/question.service';
+import { QuestiontwoSelectorService } from '../questiontwo -selector/questiontwoselector.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpParams } from '@angular/common/http';
@@ -14,8 +14,8 @@ import { TmplAstRecursiveVisitor } from '@angular/compiler';
 })
 export class QuestiontwoselectorComponent implements OnInit {
 
-
-options: string;
+respUser: Boolean
+group:string
 
 
 
@@ -34,7 +34,7 @@ userAnswer:UserAnswer = {
     IsPreScreening: true,
     IsLast : true,
     Order:0,
-    Group: "",
+    Group:"",
     NextQuestion:0,
     Message:"",
     Answers: true,
@@ -42,29 +42,30 @@ userAnswer:UserAnswer = {
   }
 
   
-
-
-  constructor(private questionService: QuestionService,
+  constructor(private questiontwoSelectorService: QuestiontwoSelectorService,
     private router: Router) { }
 
 ngOnInit(): void {
-  this.getQuestion();
 
+  this.getQuestionByGroup(this.group)
       
 }
 
+getQuestionByGroup(group){
 
-getQuestion() { // mudar GET para get
-   this.getQuestion()
-    var Group = localStorage.getItem('Group')
-    this.question.Group = this.options;
- 
-  }
+  this.questiontwoSelectorService.getQuestionByGroup(group).subscribe(res=> {
+   this.group = this.question.Group
+    this.question = res
 
-  cancel(): void {
-    this.router.navigate(['/questiontwo'])
-  }
+
+  })
 }
+
+}
+
+
+
+
 
 
 

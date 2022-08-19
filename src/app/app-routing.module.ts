@@ -7,6 +7,7 @@ import { HomeComponent } from './views/home/home.component';
 import { AnimalCrudComponent } from './views/animal-crud/animal-crud.component';
 import { QuestiontwoComponent } from './questiontwo/questiontwo.component';
 import { PreScreeningReadComponent } from './preScreening-read/preScreening-read.component';
+import { QuestiontwoselectorComponent } from './questiontwo -selector/questiontwoselector.component';
 
 const routes: Routes = [
   {
@@ -43,7 +44,7 @@ const routes: Routes = [
   },
   {
     path: "questiontwo-selector",
-    component: QuestiontwoComponent
+    component: QuestiontwoselectorComponent
   },
   {
     path: "preScreening",
