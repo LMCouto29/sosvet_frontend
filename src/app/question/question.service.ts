@@ -12,7 +12,7 @@ import { map, catchError } from "rxjs/operators";
 export class QuestionService {
 
  
-  baseUrl = "https://sosvet-api.herokuapp.com/api/question/Start";
+  baseUrl = "https://sosvet-api.herokuapp.com/api/question/test";
   
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
 

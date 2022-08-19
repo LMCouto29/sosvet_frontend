@@ -12,7 +12,7 @@ import { Component, OnInit, Output } from '@angular/core';
 export class PreScreeningReadComponent implements OnInit {
 
   preScreenings: PreScreening[]
-  displayedColumns = ['IdAnimal', 'ObjectId', 'ownername', 'ownercontact','result','state','action']
+  displayedColumns = [ 'animalname','ownername' ,'result','state','action']
 
   constructor(private preScreeningService: PreScreeningService) { }
 

@@ -4,17 +4,18 @@
       Bem -Vindo ! 
     </mat-card-title>
     <mat-card-subtitle class="subtitle">
-      SoSVeT - Pré-Triagem
+      SoSVeT - Triagem
     </mat-card-subtitle>
 </mat-card>
 
-<mat-label *ngIf="!question.Description"> Não foi possivel carregar as questões </mat-label>
 
-<mat-spinner *ngIf="!question.Description"></mat-spinner>
+<mat-label *ngIf="!question?.Description"> Não foi possivel carregar as questões </mat-label>
+
+<mat-spinner *ngIf="!question?.Description"></mat-spinner>
 
     <mat-card class="home mat-elevation-z2">
         <mat-card-content class ="question">
-            {{question.Description}}
+            {{question?.Description}}
             <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
             [(ngModel)]="respUser" *ngIf="question.Description">
             <mat-radio-button class="example-radio-button" *ngFor="let option of options" [value] = "option">
@@ -26,7 +27,7 @@
       
     </mat-card>
  
-    <button class="btn" mat-raised-button (click)="getQuestion()" color="primary" *ngIf="question.Description">  
+    <button class="btn" mat-raised-button (click)="getQuestion()" color="primary" *ngIf="question?.Description">  
         Submeter
     </button>
 

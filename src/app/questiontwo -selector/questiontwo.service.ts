@@ -9,7 +9,7 @@ import { map, catchError } from "rxjs/operators";
 @Injectable({
   providedIn: "root",
 })
-export class QuestiontwoService {
+export class QuestiontwoSelectorService {
 
  
   baseUrl = "https://sosvet-api.herokuapp.com/api/question/test";

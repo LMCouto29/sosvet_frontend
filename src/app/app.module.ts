@@ -33,6 +33,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { QuestiontwoComponent } from './questiontwo/questiontwo.component';
+import { QuestiontwoselectorComponent } from './questiontwo -selector/questiontwoselector.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 
@@ -51,7 +52,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     HomeComponent,
     QuestiontwoComponent,
     PreScreeningReadComponent,
-    PreScreeningReadMaterialComponent
+    PreScreeningReadMaterialComponent,
+    QuestiontwoselectorComponent
     
     
     
@@ -77,7 +79,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatCheckboxModule,
     MatRadioModule,
     MatProgressSpinnerModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    
   ],
   exports: [
     RouterModule

@@ -42,6 +42,10 @@ const routes: Routes = [
     component: QuestiontwoComponent
   },
   {
+    path: "questiontwo-selector",
+    component: QuestiontwoComponent
+  },
+  {
     path: "preScreening",
     component: PreScreeningReadComponent
   },

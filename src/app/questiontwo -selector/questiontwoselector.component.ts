@@ -5,17 +5,17 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpParams } from '@angular/common/http';
 import { TmplAstRecursiveVisitor } from '@angular/compiler';
-import { Animal } from '../animal/animal.model';
+
 
 @Component({
-  selector: 'app-questiontwo',
-  templateUrl: './questiontwo.component.html',
-  styleUrls: ['./questiontwo.component.css']
+  selector: 'app-questiontwo-selector',
+  templateUrl: './questiontwoselector.component.html',
+  styleUrls: ['./questiontwoselector.component.css']
 })
-export class QuestiontwoComponent implements OnInit {
+export class QuestiontwoselectorComponent implements OnInit {
 
 respUser: Boolean; 
-options: string[] = ['true', 'false'];
+options: string[] = ['respiratorio', 'cardiologico'];
 
 
 
@@ -60,11 +60,11 @@ getQuestion() { // mudar GET para get
       this.question = res
      
       if(this.question.IsLast == true || this.question?.Id == "" || this.userAnswer.value ==true){
-        this.questionService.showMessage('Triagem criada!' + this.question.Message) 
+        this.questionService.showMessage('Pré-Triagem criada!' + this.question.Message) 
         this.router.navigate(['/animal']  )
           
       } if(this.userAnswer.value == true)
-      this.questionService.showMessage('Triagem criada!'+ this.question.Message) 
+      this.questionService.showMessage('Pré-Triagem criada!'+ this.question.Message) 
 
 
       this.router.navigate(['/questiontwo'])

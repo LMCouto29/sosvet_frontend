@@ -1,0 +1,23 @@
+
+<mat-card class="home mat-elevation-z3">
+    <mat-card-title class="title">
+      Bem -Vindo ! 
+    </mat-card-title>
+    <mat-card-subtitle class="subtitle">
+      SoSVeT - Pré-Triagem
+    </mat-card-subtitle>
+</mat-card>
+
+
+<mat-spinner *ngIf="!question.Description"></mat-spinner>
+
+    <mat-card class="home mat-elevation-z2">
+        
+      
+    </mat-card>
+ 
+    <button class="btn" mat-raised-button (click)="getQuestion()" color="primary" option = "cardiologico">  
+        cardiologico
+    </button>
+
+    
