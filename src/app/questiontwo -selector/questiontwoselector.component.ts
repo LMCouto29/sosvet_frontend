@@ -1,4 +1,4 @@
-import { Question } from '../question/question.model';
+import { Question} from '../questiontwo/questiontwo.model';
 import { UserAnswer } from './user-answer.model'; 
 import { QuestionService } from '../question/question.service';
 import { Component, OnInit } from '@angular/core';
@@ -14,8 +14,8 @@ import { TmplAstRecursiveVisitor } from '@angular/compiler';
 })
 export class QuestiontwoselectorComponent implements OnInit {
 
-respUser: Boolean; 
-options: string[] = ['respiratorio', 'cardiologico'];
+
+options: string;
 
 
 
@@ -34,7 +34,7 @@ userAnswer:UserAnswer = {
     IsPreScreening: true,
     IsLast : true,
     Order:0,
-    Group:"",
+    Group: "",
     NextQuestion:0,
     Message:"",
     Answers: true,
@@ -49,28 +49,16 @@ userAnswer:UserAnswer = {
 
 ngOnInit(): void {
   this.getQuestion();
+
       
 }
 
 
 getQuestion() { // mudar GET para get
-   this.userAnswer.value = this.respUser;
-   this.userAnswer.questionId = this.question.Id
-    this.questionService.getQuestion(this.question,this.userAnswer).subscribe(res=> {
-      this.question = res
-     
-      if(this.question.IsLast == true || this.question?.Id == "" || this.userAnswer.value ==true){
-        this.questionService.showMessage('Pré-Triagem criada!' + this.question.Message) 
-        this.router.navigate(['/animal']  )
-          
-      } if(this.userAnswer.value == true)
-      this.questionService.showMessage('Pré-Triagem criada!'+ this.question.Message) 
-
-
-      this.router.navigate(['/questiontwo'])
-     
-    })
-
+   this.getQuestion()
+    var Group = localStorage.getItem('Group')
+    this.question.Group = this.options;
+ 
   }
 
   cancel(): void {
