@@ -39,7 +39,7 @@ const routes: Routes = [
     component: QuestionComponent
   },
   {
-    path: "questiontwo",
+    path: "questiontwo/:group",
     component: QuestiontwoComponent
   },
   {

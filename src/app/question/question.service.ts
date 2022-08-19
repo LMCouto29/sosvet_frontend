@@ -13,7 +13,7 @@ export class QuestionService {
   [x: string]: any;
 
  
-  baseUrl = "https://sosvet-api.herokuapp.com/api/question";
+  baseUrl = "https://sosvet-api.herokuapp.com/api/question/Start";
   
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
 

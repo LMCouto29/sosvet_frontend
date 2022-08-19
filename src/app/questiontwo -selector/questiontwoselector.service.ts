@@ -1,30 +1,34 @@
 import { Injectable } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Question } from "./questiontwo.model";
-import{ UserAnswer } from "./user-answer.model"
+import { UserAnswer } from "./user-answer.model"
 import { Observable, EMPTY } from "rxjs";
 import { map, catchError } from "rxjs/operators";
+import { group } from "@angular/animations";
 
 @Injectable({
   providedIn: "root",
 })
 export class QuestiontwoSelectorService {
 
- 
-  baseUrl = "https://sosvet-api.herokuapp.com/api/question/Test?Group=?";
-  
-  constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
+  baseUrl = "https://sosvet-api.herokuapp.com/api/question";
 
-  getQuestionByGroup (Group: string): Observable<Question> {
-    const url = `${this.baseUrl}=${Group}`;
-    return this.http.get<Question>(url).pipe(
+  constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
+
+  getQuestionByGroup(group: string,  userAnswer: UserAnswer): Observable<Question> {
+    
+    const httpOptions = {
+      headers: new HttpHeaders({'Content-Type': 'application/json'})
+    }
+
+    const url = `${this.baseUrl}/${group}`;
+    return this.http.post<Question>(url, userAnswer, httpOptions).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
 
     );
   }
-
 
   showMessage(msg: string, isError: boolean = false): void {
     this.snackBar.open(msg, "X", {

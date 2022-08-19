@@ -1,28 +1,21 @@
-
 <mat-card class="home mat-elevation-z3">
     <mat-card-title class="title">
-      Bem -Vindo ! 
+        Bem -Vindo !
     </mat-card-title>
     <mat-card-subtitle class="subtitle">
-      SoSVeT - Pré-Triagem
+        SoSVeT - Pré-Triagem
     </mat-card-subtitle>
 </mat-card>
 
+<mat-card class="home mat-elevation-z2">
 
-<mat-spinner *ngIf="!question.Description"></mat-spinner>
+</mat-card>
 
-    <mat-card class="home mat-elevation-z2">
-        
-      
-    </mat-card>
- 
-    <button class="btn" mat-raised-button (ngclick)= "getQuestionByGroup(group)" group = "Cardiologico" Group color="primary">  
-        Cardiologico
-    </button>
-    <button class="btn" mat-raised-button (ngclick)= "getQuestionByGroup(group)"    group = "Respiratorio" color="primary" >  
-        Respiratório
-    </button>
-    
+<button class="btn" mat-raised-button (click)="getQuestionByGroup('Cardiologico')" color="primary">
+    Cardiologico
+</button>
+<button class="btn" mat-raised-button (click)="getQuestionByGroup('Circulatorio')" color="primary">
+    Respiratório
+</button>
 
-
-    
+Criamos a página com os botões : ->  
