@@ -78,7 +78,7 @@ export class QuestionComponent implements OnInit {
     })
   }
 
-  // Ideia de chamar o animal pelo id, para exibir os dados no ecrã, mas não está a funcionar
+
   getAnimalById(idAnimal) {
     this.animalService.getAnimalById(idAnimal).subscribe(res => {
       this.animal = res

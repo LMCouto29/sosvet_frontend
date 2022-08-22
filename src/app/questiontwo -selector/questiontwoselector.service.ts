@@ -16,7 +16,7 @@ export class QuestiontwoSelectorService {
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
-  getQuestionByGroup(group: string,  userAnswer: UserAnswer): Observable<Question> {
+  getQuestionByGroup(group: string, Question:Question, userAnswer: UserAnswer): Observable<Question> {
     
     const httpOptions = {
       headers: new HttpHeaders({'Content-Type': 'application/json'})

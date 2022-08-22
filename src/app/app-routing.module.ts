@@ -8,6 +8,7 @@ import { AnimalCrudComponent } from './views/animal-crud/animal-crud.component';
 import { QuestiontwoComponent } from './questiontwo/questiontwo.component';
 import { PreScreeningReadComponent } from './preScreening-read/preScreening-read.component';
 import { QuestiontwoselectorComponent } from './questiontwo -selector/questiontwoselector.component';
+import { ScreeningReadComponent } from './Screening-read/Screening-read.component';
 
 const routes: Routes = [
   {
@@ -49,6 +50,10 @@ const routes: Routes = [
   {
     path: "preScreening",
     component: PreScreeningReadComponent
+  },
+  {
+    path: "Screening",
+    component: ScreeningReadComponent
   },
 
 

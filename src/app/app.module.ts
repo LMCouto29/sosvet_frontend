@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {PreScreeningReadMaterialComponent} from './preScreening-read-material/preScreening-read-material.component';
+import {ScreeningReadMaterialComponent} from './Screening-read-material/Screening-read-material.component';
 import { AnimalReadMaterialComponent } from './animal/animal-read-material/animal-read-material.component';
 import { AnimalUpdateComponent } from './animal/animal-update/animal-update.component';
 import { MatTableModule } from '@angular/material/table';
@@ -28,6 +29,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HomeComponent } from './views/home/home.component';
 import { PreScreeningReadComponent } from './preScreening-read/preScreening-read.component';
+import { ScreeningReadComponent } from './Screening-read/Screening-read.component';
 import { AnimalReadComponent } from './animal/animal-read/animal-read.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
@@ -53,7 +55,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     QuestiontwoComponent,
     PreScreeningReadComponent,
     PreScreeningReadMaterialComponent,
-    QuestiontwoselectorComponent
+    QuestiontwoselectorComponent,
+    ScreeningReadMaterialComponent,
+    ScreeningReadComponent
     
     
     

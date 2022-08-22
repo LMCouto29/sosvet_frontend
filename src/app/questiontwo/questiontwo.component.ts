@@ -6,6 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { HttpParams } from '@angular/common/http';
 import { TmplAstRecursiveVisitor } from '@angular/compiler';
 import { Animal } from '../animal/animal.model';
+import { AnimalService } from '../animal/animal.service';
 
 @Component({
   selector: 'app-questiontwo',
@@ -37,9 +38,16 @@ export class QuestiontwoComponent implements OnInit {
     Answers: true,
 
   }
+  public idAnimalUrl;
 
+  animal: Animal;
   constructor(private questiontwoSelectorService: QuestiontwoSelectorService,
-    private router: Router, private route: ActivatedRoute) { }
+    private router: Router, private route: ActivatedRoute , private animalService: AnimalService) {
+      const idAnimalUrl = this.route.snapshot.params['IdAnimal'];
+      if (idAnimalUrl) {
+        localStorage.setItem('idAnimal', idAnimalUrl);
+      }
+     }
 
   ngOnInit(): void {
     const group = this.route.snapshot.params['group'];
@@ -48,11 +56,37 @@ export class QuestiontwoComponent implements OnInit {
   }
 
   getQuestionByGroup(group) {
-
-    this.questiontwoSelectorService.getQuestionByGroup(group, this.userAnswer).subscribe(res => {
+    var idAnimalLocalStorage = localStorage.getItem('idAnimal')
+    this.getAnimalById(idAnimalLocalStorage);
+    console.log('idAnimalLocalStorage' + idAnimalLocalStorage)
+    this.getAnimalById(idAnimalLocalStorage);
+    this.questiontwoSelectorService.getQuestionByGroup(group,this.question, this.userAnswer).subscribe(res => {
       this.group = this.question.Group
       this.question = res
+      var idAnimalLocalStorage = localStorage.getItem('idAnimal')
+
+    this.getAnimalById(idAnimalLocalStorage);
+    console.log('idAnimalLocalStorage' + idAnimalLocalStorage)
+    this.getAnimalById(idAnimalLocalStorage);
+    this.userAnswer.value = this.respUser;
+    this.userAnswer.questionId = this.question.Id
+    this.userAnswer.userId = idAnimalLocalStorage
+    this.questiontwoSelectorService.getQuestionByGroup(this.group,this.question, this.userAnswer).subscribe(res => {
+      this.question = res
+
+      if (this.question.IsLast == true || this.question?.Id == "" || this.userAnswer.value == true) {
+        this.questiontwoSelectorService.showMessage('Triagem criada!' + this.question.Message)
+        this.router.navigate(['/animal'])
+
+      } 
+
+    })
       
+    })
+  }
+  getAnimalById(idAnimal) {
+    this.animalService.getAnimalById(idAnimal).subscribe(res => {
+      this.animal = res
     })
   }
 }

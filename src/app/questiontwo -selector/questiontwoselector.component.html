@@ -3,19 +3,28 @@
         Bem -Vindo !
     </mat-card-title>
     <mat-card-subtitle class="subtitle">
-        SoSVeT - Pré-Triagem
+        SoSVeT - Triagem, por favor, selecione uma das categorias abaixo:
     </mat-card-subtitle>
 </mat-card>
 
-<mat-card class="home mat-elevation-z2">
+<mat-list role="Dados do Animal">
+    <h3> Dados do Animal :</h3>   
+   <mat-list-item role="listitem">Nome do Animal : {{animal?.Name}} </mat-list-item>
+   <mat-list-item role="listitem">Idade : {{animal?.Age}}</mat-list-item>
+   <mat-list-item role="listitem">Nome do Tutor: {{animal?.Owner}}</mat-list-item>
+   <mat-list-item role="listitem">Contacto do Tutor : {{animal?.Contact}}</mat-list-item>
+ </mat-list>  
 
-</mat-card>
-
+ <mat-card-content>   
+<mat-card-content>
 <button class="btn" mat-raised-button (click)="getQuestionByGroup('Cardiologico')" color="primary">
     Cardiologico
 </button>
 <button class="btn" mat-raised-button (click)="getQuestionByGroup('Circulatorio')" color="primary">
     Respiratório
 </button>
-
-Criamos a página com os botões : ->  
+</mat-card-content>
+</mat-card-content>
+<div class="div-info-animal">
+    <mat-label class="label-codigo-animal">Código do Animal: {{this.userAnswer.userId}}</mat-label>
+</div>

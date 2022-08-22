@@ -1,4 +1,4 @@
-export interface PreScreening {
+export interface Screening {
     IdAnimal?: string
     objectId: string
     state: string
@@ -9,5 +9,7 @@ export interface PreScreening {
     ownerContact:string
     questao: string
     resposta: string
+    Color : string
+
 }
 
