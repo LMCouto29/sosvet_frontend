@@ -1,3 +1,5 @@
+
+
 import { Question } from '../question/question.model';
 import { UserAnswer } from './user-answer.model';
 import { QuestiontwoSelectorService } from '../questiontwo -selector/questiontwoselector.service';
@@ -72,13 +74,9 @@ export class QuestiontwoComponent implements OnInit {
     this.userAnswer.questionId = this.question.Id
     this.userAnswer.userId = idAnimalLocalStorage
     this.questiontwoSelectorService.getQuestionByGroup(this.group,this.question, this.userAnswer).subscribe(res => {
-      this.question = res
 
-      if (this.question.IsLast == true || this.question?.Id == "" || this.userAnswer.value == true) {
-        this.questiontwoSelectorService.showMessage('Triagem criada!' + this.question.Message)
-        this.router.navigate(['/animal'])
+      
 
-      } 
 
     })
       

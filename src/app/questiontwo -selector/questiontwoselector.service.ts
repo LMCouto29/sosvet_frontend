@@ -12,7 +12,7 @@ import { group } from "@angular/animations";
 })
 export class QuestiontwoSelectorService {
 
-  baseUrl = "https://sosvet-api.herokuapp.com/api/question";
+  baseUrl = "https://sosvet-api.herokuapp.com/api/question/Group";
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
