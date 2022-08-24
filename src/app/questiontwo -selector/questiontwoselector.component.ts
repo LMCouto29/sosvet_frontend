@@ -59,8 +59,24 @@ export class QuestiontwoselectorComponent implements OnInit {
     this.getAnimalById(idAnimalLocalStorage);
       this.router.navigate([`/questiontwo/${group}`])
   }
+
+  getByGroup(group) {
+    var groupLocalStorage = localStorage.getItem('group')
+
+    this.getgroup(groupLocalStorage);
+    console.log('groupLocalStorage' + groupLocalStorage)
+    this.getByGroup(groupLocalStorage);
+      this.router.navigate([`/questiontwo/${group}`])
+  }
+
   getAnimalById(idAnimal) {
     this.animalService.getAnimalById(idAnimal).subscribe(res => {
+      this.animal = res
+    })
+  }
+
+  getgroup(group) {
+    this.animalService.getAnimalById(group).subscribe(res => {
       this.animal = res
     })
   }

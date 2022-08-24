@@ -35,8 +35,9 @@
 <mat-spinner *ngIf="!question.Description"></mat-spinner>
 
 <br>
-<button class="btn" mat-raised-button (click)="getQuestionByGroup(group)" color="primary" *ngIf="question.Description">
+<button class="btn" mat-raised-button (click)="getQuestionByGroup(this.question.Group)" color="primary" *ngIf="question.Description">
     Submeter
+</button>    
  
 
     

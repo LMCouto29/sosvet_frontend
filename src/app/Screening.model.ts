@@ -3,13 +3,14 @@ export interface Screening {
     objectId: string
     state: string
     result:  string
-    datePreScreening: Date
+    datePreScreening: string
     animalname: string
     ownerName:string
     ownerContact:string
     questao: string
     resposta: string
     Color : string
+    IdScreening: string
 
 }
 

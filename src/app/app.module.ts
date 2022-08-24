@@ -37,6 +37,7 @@ import { MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { QuestiontwoComponent } from './questiontwo/questiontwo.component';
 import { QuestiontwoselectorComponent } from './questiontwo -selector/questiontwoselector.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
@@ -84,6 +85,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatRadioModule,
     MatProgressSpinnerModule,
     FlexLayoutModule,
+    MatDialogModule
     
   ],
   exports: [
