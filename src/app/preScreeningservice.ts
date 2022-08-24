@@ -12,7 +12,6 @@ export class PreScreeningService {
    //baseUrl = "https://localhost:44379/api/Animal";
   baseUrl = "https://sosvet-api.herokuapp.com/api/PreScreening";
   
-
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
 
   showMessage(msg: string, isError: boolean = false): void {
@@ -24,19 +23,12 @@ export class PreScreeningService {
     });
   }
 
-
-
   read(): Observable<PreScreening[]> {
     return this.http.get<PreScreening[]>(this.baseUrl).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
   }
-
-
-
-  
-
 
   delete(id: number): Observable<PreScreening> {
     const url = `${this.baseUrl}/${id}`;

@@ -1,3 +1,4 @@
+import { LoginComponent } from './views/login/login.component';
 import { AnimalUpdateComponent } from './animal/animal-update/animal-update.component';
 import { AnimalCreateComponent } from './animal/animal-create/animal-create.component';
 import { QuestionComponent } from'./question/question.component';
@@ -12,7 +13,7 @@ import { ScreeningReadComponent } from './Screening-read/Screening-read.componen
 
 const routes: Routes = [
   {
-    path: "", 
+    path: "home", 
     component: HomeComponent
   },
   {
@@ -55,8 +56,10 @@ const routes: Routes = [
     path: "Screening",
     component: ScreeningReadComponent
   },
-
-
+  {
+    path: "login",
+    component: LoginComponent
+  },
 ];
 
 @NgModule({

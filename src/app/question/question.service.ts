@@ -17,15 +17,12 @@ export class QuestionService {
   
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
 
-  
-
   getQuestion(question:Question,userAnswer:UserAnswer): Observable<Question> {
     return this.http.post<Question>(this.baseUrl,userAnswer).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
   }
-
 
   showMessage(msg: string, isError: boolean = false): void {
     this.snackBar.open(msg, "X", {
@@ -35,7 +32,6 @@ export class QuestionService {
       panelClass: isError ? ["msg-error"] : ["msg-success"],
     });
   }
-
 
   errorHandler(e: any): Observable<any> {
     this.showMessage("Ocorreu um erro!", true);

@@ -1,0 +1,45 @@
+.login {
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    max-width: 400px;
+    margin-left: 40%;
+    margin-top: 50vh;
+}
+
+.center {
+    margin: auto;
+    width: 41%;
+    padding: 10px;
+  }
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+element.style {
+    align-items: center;
+    align-content: center;
+}
+
+.mat-card-header .mat-card-title {
+    margin-bottom: 12px;
+}
+.mat-card-header .mat-card-title {
+    font-size: 2rem;
+    margin-bottom: 10%;
+}
+
+.mat-card-actions .mat-button, .mat-card-actions .mat-raised-button, .mat-card-actions .mat-stroked-button {
+    margin: 0 8px;
+    width: 48%;
+}
+
+.mat-card>.mat-card-actions:last-child {
+    margin-bottom: -5px;
+    padding-bottom: 0;
+    margin-top: 15%;
+}

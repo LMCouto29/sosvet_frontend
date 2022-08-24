@@ -1,3 +1,4 @@
+import { Router, NavigationStart } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  showHead: boolean = true;
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
+
+  // constructor(private router: Router) {
+  // // on route change to '/login', set the variable showHead to false
+  //   router.events.forEach((event) => {
+  //     if (event instanceof NavigationStart) {
+  //       if (event['url'] == '/login') {
+  //         this.showHead = false;
+  //       } else {
+  //         // console.log("NU")
+  //         this.showHead = true;
+  //       }
+  //     }
+  //   });
+  // }
 
 }

@@ -38,6 +38,7 @@ import { QuestiontwoComponent } from './questiontwo/questiontwo.component';
 import { QuestiontwoselectorComponent } from './questiontwo -selector/questiontwoselector.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatDialogModule} from '@angular/material/dialog';
+import { LoginComponent } from './views/login/login.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     PreScreeningReadMaterialComponent,
     QuestiontwoselectorComponent,
     ScreeningReadMaterialComponent,
-    ScreeningReadComponent
+    ScreeningReadComponent,
+    LoginComponent
     
     
     

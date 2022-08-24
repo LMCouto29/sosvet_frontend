@@ -11,6 +11,4 @@ export interface Screening {
     resposta: string
     Color : string
     IdScreening: string
-
 }
-

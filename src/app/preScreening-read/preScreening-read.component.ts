@@ -1,3 +1,4 @@
+import { Screening } from './../Screening.model';
 import { PreScreeningService } from '../preScreeningservice';
 import { PreScreening } from '../preScreening.model';
 import { Component, OnInit, Output } from '@angular/core';
@@ -21,6 +22,13 @@ export class PreScreeningReadComponent implements OnInit {
       this.preScreenings = preScreenings;
       console.log(preScreenings)
     })
+  }
+
+  appointment(screening: Screening) {
+    // Mudar para PreScreening
+    // this.ScreeningService.appointment(screening).subscribe(screenings => {
+    //   this.readScreening(); 
+    // })
   }
 
 }
