@@ -2,6 +2,7 @@ import { ScreeningService } from '../Screeningservice';
 import { Screening } from '../Screening.model';
 import { Component, OnInit, Output } from '@angular/core';
 import { DatePipe, DATE_PIPE_DEFAULT_TIMEZONE } from '@angular/common';
+import { HttpHeaders } from '@angular/common/http';
 
 
 @Component({
@@ -42,6 +43,7 @@ screening:Screening = {
 
 readScreening(){
   this.ScreeningService.read().subscribe(Screenings => {
+  
     this.Screenings = Screenings;
     console.log(Screenings)
   })
@@ -50,7 +52,11 @@ readScreening(){
 
   
 appointment(screening: Screening) {
-  this.ScreeningService.appointment(screening.IdScreening).subscribe(screenings => {
+  this.ScreeningService.appointment(screening.objectId).subscribe(screenings => {
+    const httpOptions = {
+      headers: new HttpHeaders({'Content-Type': 'application/json'})
+    }
+    screening.IdScreening = screening.objectId
     this.readScreening();
   })
     
