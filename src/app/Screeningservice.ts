@@ -38,7 +38,7 @@ export class ScreeningService {
 
   appointment(screening): Observable<Screening[]> {
     const url = `${this.baseUrl}/${"Start"}`
-    return this.http.post<Screening[]>(this.baseUrl, screening).pipe(
+    return this.http.post<Screening[]>(this.baseUrl, screening.IdScreening).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );

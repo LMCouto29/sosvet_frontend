@@ -17,7 +17,7 @@ export class ScreeningReadComponent implements OnInit {
   displayedColumns = [ 'animalname','ownername' ,'result','state',"color",'action']
   Screening: string;
 screening:Screening = { 
-  IdAnimal?: "",
+  IdAnimal: "",
   objectId: "",
   state: "",
   result:  "",
@@ -49,15 +49,10 @@ readScreening(){
 }
 
   
-  appointment() {
-    
-    this.ScreeningService.appointment(this.Screening).subscribe(Screenings =>{
-    this.id = screening
-
-
-
-    })
-    
+appointment(screening: Screening) {
+  this.ScreeningService.appointment(screening.IdScreening).subscribe(screenings => {
+    this.readScreening();
+  })
     
     
     //chamar o serviço do appointment 
@@ -65,12 +60,9 @@ readScreening(){
     // this.readPreScreening colocar dentro 
     // passo 2 -  HTML função para chamar appointment dentro do botão
     // passo 3 -  no backend filtrar para retornar isvisible = true.
-    this.readScreening()
+    
 
   }
 
-}
-function screening(screening: any) {
-  throw new Error('Function not implemented.');
 }
 
