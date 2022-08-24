@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Screening } from "./Screening.model";
 import { Observable, EMPTY } from "rxjs";
 import { map, catchError } from "rxjs/operators";
@@ -14,7 +14,7 @@ export class ScreeningService {
    //baseUrl = "https://localhost:44379/api/Animal";
   baseUrl = "https://sosvet-api.herokuapp.com/api/Screening";
   
- 
+Start : "" 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
 
   showMessage(msg: string, isError: boolean = false): void {
@@ -37,11 +37,16 @@ export class ScreeningService {
 
 
   appointment(screening): Observable<Screening[]> {
-    const url = `${this.baseUrl}/${"Start"}`
-    return this.http.post<Screening[]>(this.baseUrl, screening.IdScreening).pipe(
+    const httpOptions = {
+      headers: new HttpHeaders({'Content-Type': 'application/json'})
+    }
+    const url = `${this.baseUrl}/Start`
+    return this.http.post<Screening[]>(url, screening.IdScreening,httpOptions).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
-    );
+    )
+
+    
 
   }
   delete(id: number): Observable<Screening> {
