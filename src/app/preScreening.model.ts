@@ -1,6 +1,6 @@
 export interface PreScreening {
     IdAnimal?: string
-    objectId: string
+    IdPreScreening: string
     state: string
     result:  string
     datePreScreening: Date

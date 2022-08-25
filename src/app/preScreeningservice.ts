@@ -1,9 +1,10 @@
 import { Injectable } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { PreScreening } from "./preScreening.model";
 import { Observable, EMPTY } from "rxjs";
 import { map, catchError } from "rxjs/operators";
+import { PreScreeningAppointment } from "./preScreeningAppointment.model";
 
 @Injectable({
   providedIn: "root",
@@ -29,6 +30,25 @@ export class PreScreeningService {
       catchError((e) => this.errorHandler(e))
     );
   }
+
+  appointment(prescreening: PreScreening): Observable<PreScreening[]> {
+
+    const prescreeningAppointment = {} as PreScreeningAppointment;
+    prescreeningAppointment.IdPre = prescreening.IdPreScreening;
+    
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    }
+    const url = `${this.baseUrl}/Start`
+    return this.http.post<PreScreening[]>(url, prescreeningAppointment, httpOptions).pipe(
+      map((obj) => {
+        obj;
+        this.showMessage('Animal chamado para a consulta!')
+      }),
+      catchError((e) => this.errorHandler(e))
+    )
+  }
+
 
   delete(id: number): Observable<PreScreening> {
     const url = `${this.baseUrl}/${id}`;

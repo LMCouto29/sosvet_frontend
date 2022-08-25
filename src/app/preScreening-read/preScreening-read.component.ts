@@ -1,6 +1,5 @@
-import { Screening } from './../Screening.model';
-import { PreScreeningService } from '../preScreeningservice';
-import { PreScreening } from '../preScreening.model';
+import { PreScreening } from './../preScreening.model';
+import { PreScreeningService } from './../preScreeningservice'
 import { Component, OnInit, Output } from '@angular/core';
 
 
@@ -14,21 +13,26 @@ export class PreScreeningReadComponent implements OnInit {
 
   preScreenings: PreScreening[]
   displayedColumns = [ 'animalname','ownername' ,'result','state','action']
+ 
 
   constructor(private preScreeningService: PreScreeningService) { }
 
   ngOnInit(): void {
+    this.readPreScreening
+    
+  }
+
+  readPreScreening() {
     this.preScreeningService.read().subscribe(preScreenings => {
       this.preScreenings = preScreenings;
-      console.log(preScreenings)
+      
+    })
+
+  }
+
+  appointment(preScreening: PreScreening) {
+    this.preScreeningService.appointment(preScreening).subscribe(prescreenings => {
+      this.readPreScreening();
     })
   }
-
-  appointment(screening: Screening) {
-    // Mudar para PreScreening
-    // this.ScreeningService.appointment(screening).subscribe(screenings => {
-    //   this.readScreening(); 
-    // })
-  }
-
 }

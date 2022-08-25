@@ -1,8 +1,7 @@
 import { ScreeningService } from '../Screeningservice';
 import { Screening } from '../Screening.model';
 import { Component, OnInit, Output } from '@angular/core';
-import { DatePipe, DATE_PIPE_DEFAULT_TIMEZONE } from '@angular/common';
-import { HttpHeaders } from '@angular/common/http';
+
 
 
 @Component({
@@ -17,20 +16,7 @@ export class ScreeningReadComponent implements OnInit {
   Screenings: Screening[]
   displayedColumns = ['animalname', 'ownername', 'result', 'state', "color", 'action']
   Screening: string;
-  screening: Screening = {
-    IdAnimal: "",
-    objectId: "",
-    state: "",
-    result: "",
-    datePreScreening: "",
-    animalname: "",
-    ownerName: "",
-    ownerContact: "",
-    questao: "",
-    resposta: "",
-    Color: "",
-    IdScreening: "",
-  }
+  
 
   constructor(private ScreeningService: ScreeningService) { }
 
