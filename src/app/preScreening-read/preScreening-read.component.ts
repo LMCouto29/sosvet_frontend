@@ -18,7 +18,7 @@ export class PreScreeningReadComponent implements OnInit {
   constructor(private preScreeningService: PreScreeningService) { }
 
   ngOnInit(): void {
-    this.readPreScreening
+    this.readPreScreening()
     
   }
 

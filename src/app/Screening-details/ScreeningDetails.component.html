@@ -1,0 +1,37 @@
+<mat-card class="home mat-elevation-z3">
+    <mat-card-title class="title">
+        Bem -Vindo !
+    </mat-card-title>
+    <mat-card-subtitle class="subtitle">
+        SoSVeT - Pré-Triagem, por favor, responda as perguntas abaixo:
+    </mat-card-subtitle>
+        
+    <mat-list role="Dados do Animal">
+        <h3> Dados do Animal :</h3>   
+       <mat-list-item role="listitem">Nome do Animal : {{animal?.Name}} </mat-list-item>
+       <mat-list-item role="listitem">Idade : {{animal?.Age}}</mat-list-item>
+       <mat-list-item role="listitem">Nome do Tutor: {{animal?.Owner}}</mat-list-item>
+       <mat-list-item role="listitem">Contacto do Tutor : {{animal?.Contact}}</mat-list-item>
+     </mat-list>   
+      <mat-card-content>    
+    
+        <mat-card-content class="Screening">
+            
+            <mat-list role="Dados do Animal">
+                <h3> Detalhe da Triagem :</h3>   
+               <mat-list-item role="listitem"> Questão da Triagem : {{animal?.Name}} </mat-list-item>
+               <mat-list-item role="listitem">Resposta : {{animal?.Age}}</mat-list-item>
+               <mat-list-item role="listitem">Data da Triagem: {{animal?.Owner}}</mat-list-item>
+               
+             </mat-list>  
+            
+        </mat-card-content>
+    </mat-card-content>
+
+   
+
+
+
+
+
+

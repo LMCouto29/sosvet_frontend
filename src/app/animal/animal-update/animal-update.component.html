@@ -1,38 +1,31 @@
 <mat-card>
-    <mat-card-title>Atualizar Dados do Animal</mat-card-title>
-    
-    <form *ngIf="animal">
+    <mat-card-title>Editar dados </mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="animal.Name" name="name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Espécie" [(ngModel)]="animal.Spicies" name="spicies">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Raça" [(ngModel)]="animal.Breed" name="breed">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Idade" [(ngModel)]="animal.Age" name="age">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Nome do tutor" [(ngModel)]="animal.Owner" name="owner">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Contato do Tutor" [(ngModel)]="animal.Contact" name="contact">
+        </mat-form-field>
 
-        <mat-form-field>
-            <input matInput placeholder="Nome"
-                [(ngModel)]="animal.Name" name="name">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="spicies"
-                [(ngModel)]="animal.Spicies" name="spicies">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="breed"
-                [(ngModel)]="animal.Breed" name="breed">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="age"
-                [(ngModel)]="animal.Age" name="age">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="owner"
-                [(ngModel)]="animal.Owner" name="owner">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="contact"
-                [(ngModel)]="animal.Contact" name="contact">
-        </mat-form-field>
     </form>
     <button mat-raised-button (click)="updateAnimal()" color="primary">
-        Atualizar
+        Salvar
     </button>
-    
-    <button mat-raised-button (click)="cancel()">
+
+    <button mat-raised-button (click)="cancel()" color="secondary">
         Cancelar
     </button>
 </mat-card>

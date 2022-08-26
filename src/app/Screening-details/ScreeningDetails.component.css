@@ -1,0 +1,58 @@
+.home .title {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.home .subtitle {
+  font-size: 0.9rem;
+}
+
+.question {
+  font-size: large;
+  margin-top: 10rem;
+}
+
+.mat-elevation-z2 {
+  margin-top: 180px;
+  
+}
+
+.btn {
+  align-items: flex-end;
+  size: large;
+  font-size: 1.2rem;
+  width: 15rem;
+  margin: top 30px;
+}
+
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+  align-items: flex-start;
+  
+}
+
+.item-radio-button {
+  margin: 5px;
+  margin-top: 0.8rem;
+}
+
+.div-info-animal {
+  margin-top: 20%;
+  margin-left: 72%;
+}
+
+.mat-list{
+border-collapse: separate; 
+  border-spacing: 10px;
+
+}
+
+.label-codigo-animal {
+  font-size: 0.7rem;
+  margin-top: 10px;
+  color: rgb(166, 166, 166);
+}

@@ -6,6 +6,7 @@ import { HeaderComponent } from './/.//views/template/header/header.component';
 import { FooterComponent } from './/views/template/footer/footer.component';
 import { NavComponent } from './/views/template/nav/nav.component';
 import { AnimalCreateComponent } from './animal/animal-create/animal-create.component';
+import { AnimalUpdateComponent } from './animal/animal-update/animal-update.component';
 import { MatCardModule } from '@angular/material/card';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,7 +21,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {PreScreeningReadMaterialComponent} from './preScreening-read-material/preScreening-read-material.component';
 import {ScreeningReadMaterialComponent} from './Screening-read-material/Screening-read-material.component';
 import { AnimalReadMaterialComponent } from './animal/animal-read-material/animal-read-material.component';
-import { AnimalUpdateComponent } from './animal/animal-update/animal-update.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { AnimalCrudComponent } from './views/animal-crud/animal-crud.component';
@@ -39,6 +39,8 @@ import { QuestiontwoselectorComponent } from './questiontwo -selector/questiontw
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatDialogModule} from '@angular/material/dialog';
 import { LoginComponent } from './views/login/login.component';
+import { preScreeningDetailsComponent } from './preScreening-details/preScreeningDetails.component';
+import { ScreeningDetailsComponent } from './Screening-details/ScreeningDetails.component';
 
 
 @NgModule({
@@ -46,7 +48,6 @@ import { LoginComponent } from './views/login/login.component';
     AppComponent,
     AnimalCreateComponent,
     AnimalReadMaterialComponent,
-    AnimalUpdateComponent,
     AnimalCrudComponent,
     AnimalReadComponent,
     QuestionComponent,
@@ -60,6 +61,9 @@ import { LoginComponent } from './views/login/login.component';
     QuestiontwoselectorComponent,
     ScreeningReadMaterialComponent,
     ScreeningReadComponent,
+    AnimalUpdateComponent,
+    preScreeningDetailsComponent,
+    ScreeningDetailsComponent,
     LoginComponent
     
     
