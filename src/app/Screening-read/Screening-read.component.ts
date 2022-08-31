@@ -2,8 +2,6 @@ import { ScreeningService } from '../Screeningservice';
 import { Screening } from '../Screening.model';
 import { Component, OnInit, Output } from '@angular/core';
 
-
-
 @Component({
   selector: 'app-Screening-read',
   templateUrl: './Screening-read.component.html',
@@ -38,4 +36,3 @@ export class ScreeningReadComponent implements OnInit {
     })
   }
 }
-

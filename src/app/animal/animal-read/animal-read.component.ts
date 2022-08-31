@@ -2,7 +2,6 @@ import { AnimalService } from '../animal.service';
 import { Animal } from '../animal.model';
 import { Component, OnInit, Output } from '@angular/core';
 
-
 @Component({
   selector: 'app-animal-read',
   templateUrl: './animal-read.component.html',
@@ -24,3 +23,4 @@ export class AnimalReadComponent implements OnInit {
   }
 
 }
+

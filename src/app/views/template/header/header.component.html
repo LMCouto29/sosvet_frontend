@@ -1,30 +1,11 @@
-<mat-toolbar class="header mat-elevation-z4">
-  <span>
-    <a routerLink="/">
-      <!-- <img class="logo" src="assets/logo-angular-shop.png" alt="logo"> -->
-      <i class="material-icons v-middle">
-        pets
-      </i>
-    </a>
-  </span>
+<mat-toolbar>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>pets</mat-icon>
+  </button>
   &nbsp;
-  <h1> SoSVet</h1>
-  <span class="title-group">
-    <a routerLink="{{ routeUrl }}">
-      <i class="material-icons">
-        {{ icon }}
-      </i>
-      {{ title }}
-    </a>
-  </span>
-
-  &nbsp;
-  <span class="material-symbols-outlined">
-    logout
-  </span>
-
-  <span class="flexExpand"></span>
-    <div >
-      <a mat-button [routerLink]="'/login'"> Logout </a>
-    </div>
+  <span>SoSVet</span>
+  <span class="toolbar-spacer"></span>
+  <button [routerLink]="'/login'" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>logout</mat-icon>
+  </button>
 </mat-toolbar>

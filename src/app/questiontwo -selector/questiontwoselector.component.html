@@ -17,14 +17,36 @@
 
  <mat-card-content>   
 <mat-card-content>
+    <br>
+    
 <button class="btn" mat-raised-button (click)="getQuestionByGroup('Cardiologico')" color="primary">
-    Cardiologico
-</button>
-<button class="btn" mat-raised-button (click)="getQuestionByGroup('Circulatorio')" color="primary">
     Respiratório
 </button>
+<button class="btn" mat-raised-button (click)="getQuestionByGroup('Circulatorio')" color="primary">
+    Circulatório
+</button>
+<button class="btn" mat-raised-button (click)="getQuestionByGroup('Circulatorio')" color="primary">
+    Neurológico
+</button>
+<button class="btn" mat-raised-button (click)="getQuestionByGroup('Circulatorio')" color="primary">
+    Obstetrícia
+</button>
 </mat-card-content>
+<button class="btn" mat-raised-button (click)="getQuestionByGroup('Circulatorio')" color="primary">
+    Trauma
+</button>
+<button class="btn" mat-raised-button (click)="getQuestionByGroup('Circulatorio')" color="primary">
+    Gastrointestinal
+</button>
+<button class="btn" mat-raised-button (click)="getQuestionByGroup('Circulatorio')" color="primary">
+    Urogenital
+</button>
+<button class="btn" mat-raised-button (click)="getQuestionByGroup('Circulatorio')" color="primary">
+    Generalizado
+</button>
 </mat-card-content>
+
+
 <div class="div-info-animal">
     <mat-label class="label-codigo-animal">Código do Animal: {{this.userAnswer.userId}}</mat-label>
 </div>

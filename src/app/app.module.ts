@@ -6,21 +6,21 @@ import { HeaderComponent } from './/.//views/template/header/header.component';
 import { FooterComponent } from './/views/template/footer/footer.component';
 import { NavComponent } from './/views/template/nav/nav.component';
 import { AnimalCreateComponent } from './animal/animal-create/animal-create.component';
-import { AnimalUpdateComponent } from './animal/animal-update/animal-update.component';
 import { MatCardModule } from '@angular/material/card';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from  '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
-import { MatSnackBarModule } from  '@angular/material/snack-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {PreScreeningReadMaterialComponent} from './preScreening-read-material/preScreening-read-material.component';
-import {ScreeningReadMaterialComponent} from './Screening-read-material/Screening-read-material.component';
+import { PreScreeningReadMaterialComponent } from './preScreening-read-material/preScreening-read-material.component';
+import { ScreeningReadMaterialComponent } from './Screening-read-material/Screening-read-material.component';
 import { AnimalReadMaterialComponent } from './animal/animal-read-material/animal-read-material.component';
+import { AnimalUpdateComponent } from './animal/animal-update/animal-update.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { AnimalCrudComponent } from './views/animal-crud/animal-crud.component';
@@ -30,17 +30,17 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { HomeComponent } from './views/home/home.component';
 import { PreScreeningReadComponent } from './preScreening-read/preScreening-read.component';
 import { ScreeningReadComponent } from './Screening-read/Screening-read.component';
+import { preScreeningDetailsComponent } from './preScreening-details/preScreeningDetails.component';
 import { AnimalReadComponent } from './animal/animal-read/animal-read.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
-import { MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { QuestiontwoComponent } from './questiontwo/questiontwo.component';
 import { QuestiontwoselectorComponent } from './questiontwo -selector/questiontwoselector.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { LoginComponent } from './views/login/login.component';
-import { preScreeningDetailsComponent } from './preScreening-details/preScreeningDetails.component';
-import { ScreeningDetailsComponent } from './Screening-details/ScreeningDetails.component';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -48,6 +48,7 @@ import { ScreeningDetailsComponent } from './Screening-details/ScreeningDetails.
     AppComponent,
     AnimalCreateComponent,
     AnimalReadMaterialComponent,
+    AnimalUpdateComponent,
     AnimalCrudComponent,
     AnimalReadComponent,
     QuestionComponent,
@@ -61,13 +62,8 @@ import { ScreeningDetailsComponent } from './Screening-details/ScreeningDetails.
     QuestiontwoselectorComponent,
     ScreeningReadMaterialComponent,
     ScreeningReadComponent,
-    AnimalUpdateComponent,
-    preScreeningDetailsComponent,
-    ScreeningDetailsComponent,
-    LoginComponent
-    
-    
-    
+    LoginComponent,
+    preScreeningDetailsComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -82,7 +78,7 @@ import { ScreeningDetailsComponent } from './Screening-details/ScreeningDetails.
     MatPaginatorModule,
     MatTableModule,
     BrowserModule,
-    RouterModule, 
+    RouterModule,
     MatSidenavModule,
     MatToolbarModule,
     AppRoutingModule,
@@ -91,8 +87,9 @@ import { ScreeningDetailsComponent } from './Screening-details/ScreeningDetails.
     MatRadioModule,
     MatProgressSpinnerModule,
     FlexLayoutModule,
-    MatDialogModule
-    
+    MatDialogModule,
+    MatIconModule,
+
   ],
   exports: [
     RouterModule
@@ -105,5 +102,4 @@ import { ScreeningDetailsComponent } from './Screening-details/ScreeningDetails.
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
 

@@ -13,3 +13,15 @@ table {
 .delete > i {
   color: #e35e6b;
 }
+
+.edit {
+  margin-right: 10px;
+}
+
+.edit > i {
+  color: #d9cd26;
+}
+.material-symbols-outlined{
+
+  color: #e35e6b
+}

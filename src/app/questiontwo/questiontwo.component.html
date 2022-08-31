@@ -26,18 +26,18 @@
         </mat-card-content>
         </mat-card-content>
   
-
+       
     <div class="div-info-animal">
         <mat-label class="label-codigo-animal">Código do Animal: {{this.userAnswer.userId}}</mat-label>
     </div>
     <mat-label *ngIf="!question.Description"> Não foi possivel carregar as questões </mat-label>
-
+    <button class="btn" mat-raised-button (click)="getQuestionByGroup(this.question.Group)" color="primary" *ngIf="question.Description">
+        Submeter
+    </button>
 <mat-spinner *ngIf="!question.Description"></mat-spinner>
 
-<br>
-<button class="btn" mat-raised-button (click)="getQuestionByGroup(this.question.Group)" color="primary" *ngIf="question.Description">
-    Submeter
-</button>    
+
+    
  
 
     
