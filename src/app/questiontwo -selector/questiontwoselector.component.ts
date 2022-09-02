@@ -19,7 +19,7 @@ export class QuestiontwoselectorComponent implements OnInit {
   respUser: Boolean
   group: string
   public idAnimalUrl;
-  animal : Animal;
+  animal: Animal;
 
   userAnswer: UserAnswer = {
     value: false,
@@ -41,14 +41,15 @@ export class QuestiontwoselectorComponent implements OnInit {
 
   constructor(private questiontwoSelectorService: QuestiontwoSelectorService,
     private router: Router, private route: ActivatedRoute, private animalService: AnimalService) {
-      const idAnimalUrl = this.route.snapshot.params['IdAnimal'];
-      if (idAnimalUrl) {
-        localStorage.setItem('idAnimal', idAnimalUrl);
-      }
-     }
+    const idAnimalUrl = this.route.snapshot.params['IdAnimal'];
+    if (idAnimalUrl) {
+      localStorage.setItem('idAnimal', idAnimalUrl);
+    }
+  }
 
   ngOnInit(): void {
-
+    const idAnimal = this.route.snapshot.params['IdAnimal'];
+    this.getAnimalById(idAnimal);
   }
 
   getQuestionByGroup(group) {
@@ -57,7 +58,7 @@ export class QuestiontwoselectorComponent implements OnInit {
     this.getAnimalById(idAnimalLocalStorage);
     console.log('idAnimalLocalStorage' + idAnimalLocalStorage)
     this.getAnimalById(idAnimalLocalStorage);
-      this.router.navigate([`/questiontwo/${group}`])
+    this.router.navigate([`/questiontwo/${group}`])
   }
 
   getByGroup(group) {
@@ -66,7 +67,7 @@ export class QuestiontwoselectorComponent implements OnInit {
     this.getgroup(groupLocalStorage);
     console.log('groupLocalStorage' + groupLocalStorage)
     this.getByGroup(groupLocalStorage);
-      this.router.navigate([`/questiontwo/${group}`])
+    this.router.navigate([`/questiontwo/${group}`])
   }
 
   getAnimalById(idAnimal) {

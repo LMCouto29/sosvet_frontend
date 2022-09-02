@@ -1,10 +1,20 @@
 table {
   width: 100%;
+  border-color: #e35e6b;
+  
 }
 
 .edit {
   margin-right: 10px;
 }
+
+.mat-elevation-z4{
+
+  border-color: gray;
+
+}
+
+
 
 .edit > i {
   color: #d9cd26;
@@ -25,3 +35,12 @@ table {
 
   color: #e35e6b
 }
+
+.search-input-full-width {
+  width: 30%;
+}
+.mat-card{
+
+  border-color: #e35e6b;
+}
+

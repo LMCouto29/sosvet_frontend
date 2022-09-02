@@ -1,17 +1,38 @@
 <mat-card class="home mat-elevation-z3">
-  <mat-card-title class="title">
-    Seja Bem Vindo!
-  </mat-card-title>
-  <mat-card-subtitle class="subtitle">
-    SoSVeT
-  </mat-card-subtitle>
 
-  <mat-card-content>
-    <a mat-list-item routerLink="/animal">
-      <i class="material-icons v-middle">
-        medical_services
-      </i>
-      Animais
-    </a>
-  </mat-card-content>
+  <img [src]="'assets/logo.jpg'" alt="Logo do SOSVET">
+
+  <div class="row">
+    <div class="column">
+      <mat-card class="home mat-elevation-z3 mat-card-dashboard" routerLink="/animal">
+        <mat-card-title class="title">
+          {{countAnimal}}
+        </mat-card-title>
+        <mat-card-subtitle class="subtitle">
+          Animal
+        </mat-card-subtitle>
+      </mat-card>
+    </div>
+    <div class="column">
+      <mat-card class="home mat-elevation-z3 mat-card-dashboard">
+        <mat-card-title class="title">
+          {{countPreScreenning}}
+        </mat-card-title>
+        <mat-card-subtitle class="subtitle">
+          Pré-Triagem
+        </mat-card-subtitle>
+      </mat-card>
+    </div>
+    <div class="column">
+      <mat-card class="home mat-elevation-z3 mat-card-dashboard">
+        <mat-card-title class="title">
+          {{countScreenning}}
+        </mat-card-title>
+        <mat-card-subtitle class="subtitle">
+          Triagem
+        </mat-card-subtitle>
+      </mat-card>
+    </div>
+  </div>
+
 </mat-card>

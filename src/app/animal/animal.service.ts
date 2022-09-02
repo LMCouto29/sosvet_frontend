@@ -42,7 +42,7 @@ export class AnimalService {
     const url = `${this.baseUrl}/${id}`;
     return this.http.get<Animal>(url).pipe(
       map((obj) => obj),
-      catchError((e) => this.errorHandler(e))
+      catchError((e) =>  this.errorHandler(e))
     ); 
   }
 

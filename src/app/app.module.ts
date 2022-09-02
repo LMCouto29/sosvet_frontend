@@ -30,7 +30,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { HomeComponent } from './views/home/home.component';
 import { PreScreeningReadComponent } from './preScreening-read/preScreening-read.component';
 import { ScreeningReadComponent } from './Screening-read/Screening-read.component';
-import { preScreeningDetailsComponent } from './preScreening-details/preScreeningDetails.component';
+import { PreScreeningDetailsComponent } from './preScreening-details/preScreeningDetails.component';
 import { AnimalReadComponent } from './animal/animal-read/animal-read.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
@@ -41,6 +41,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDialogModule } from '@angular/material/dialog';
 import { LoginComponent } from './views/login/login.component';
 import { MatIconModule } from '@angular/material/icon';
+
+import { MatGridListModule } from '@angular/material/grid-list'
 
 
 @NgModule({
@@ -58,12 +60,12 @@ import { MatIconModule } from '@angular/material/icon';
     HomeComponent,
     QuestiontwoComponent,
     PreScreeningReadComponent,
-    PreScreeningReadMaterialComponent,
+    PreScreeningDetailsComponent,
     QuestiontwoselectorComponent,
     ScreeningReadMaterialComponent,
     ScreeningReadComponent,
     LoginComponent,
-    preScreeningDetailsComponent
+    PreScreeningReadMaterialComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -89,6 +91,8 @@ import { MatIconModule } from '@angular/material/icon';
     FlexLayoutModule,
     MatDialogModule,
     MatIconModule,
+    MatGridListModule,
+    
 
   ],
   exports: [

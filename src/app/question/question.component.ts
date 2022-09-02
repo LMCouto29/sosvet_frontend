@@ -66,7 +66,7 @@ export class QuestionComponent implements OnInit {
     this.questionService.getQuestion(this.question, this.userAnswer).subscribe(res => {
       this.question = res
       
-      if (this.question.IsLast == true || this.question?.Id == "" || this.userAnswer.value == true) {
+      if (this.question.IsLast == true || this.userAnswer.value == false) {
         this.questionService.showMessage('Pré-Triagem criada!' + this.question.Message)
         this.router.navigate(['/animal'])
 

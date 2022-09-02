@@ -11,5 +11,9 @@ table {
 }
 
 .delete > i {
-  color: #e35e6b;
+  color:grey;
 }
+.material-symbols-outlined{
+  color:#e35e6b
+}
+

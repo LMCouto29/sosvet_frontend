@@ -10,6 +10,7 @@ import { QuestiontwoComponent } from './questiontwo/questiontwo.component';
 import { PreScreeningReadComponent } from './preScreening-read/preScreening-read.component';
 import { QuestiontwoselectorComponent } from './questiontwo -selector/questiontwoselector.component';
 import { ScreeningReadComponent } from './Screening-read/Screening-read.component';
+import { PreScreeningDetailsComponent } from './preScreening-details/preScreeningDetails.component';
 
 const routes: Routes = [
   {
@@ -45,8 +46,12 @@ const routes: Routes = [
     component: QuestiontwoComponent
   },
   {
-    path: "questiontwo-selector",
+    path: "questiontwo-selector/:IdAnimal",
     component: QuestiontwoselectorComponent
+  },
+  {
+    path: "preScreeningDetails/:IdAnimal",
+    component: PreScreeningDetailsComponent
   },
   {
     path: "preScreening",

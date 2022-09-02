@@ -6,7 +6,7 @@
         medical_information
       </span>
 
-      Não existem consultas agendadas!
+      Não existem animais a aguardar Pré-Triagem!
     </mat-card-title>
   </mat-card>
 
@@ -35,23 +35,17 @@
     <ng-container matColumnDef="action">
       <th mat-header-cell *matHeaderCellDef>Ações</th>
       <td mat-cell *matCellDef="let row">
-        <a routerLink="/questiontwo-selector" class="PreScreening">
+        <a (click)="appointment(row)" routerLink="/questiontwo-selector/{{ row.IdAnimal }}" click="appointment(row)" class="PreScreening">
           <span class="material-symbols-outlined">
-            medical_services
+            medical_services&nbsp;
           </span>
         </a>
 
-      <!--  <a class="PreScreening" (click)="appointment(row)" class="appointment">
-          <span class="material-symbols-outlined">
-            medical_services
-          </span>
-        </a> -->
-
-        <!--   <a routerLink="/animal/question/{{ row.objectId }}" class="delete">
+        <a routerLink="/preScreeningDetails/{{row.IdAnimal}}" class="delete">
           <i class="material-icons">
-            add_circle
+            info&nbsp;
           </i>
-        </a> -->
+        </a> 
       </td>
     </ng-container>
 

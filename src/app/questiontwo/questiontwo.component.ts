@@ -7,6 +7,9 @@ import { HttpParams } from '@angular/common/http';
 import { TmplAstRecursiveVisitor } from '@angular/compiler';
 import { Animal } from '../animal/animal.model';
 import { AnimalService } from '../animal/animal.service';
+import { PreScreeningService } from './../preScreeningservice'
+import { Screening } from '../Screening.model';
+import { PreScreening } from '../preScreening.model';
 
 @Component({
   selector: 'app-questiontwo',
@@ -17,6 +20,7 @@ export class QuestiontwoComponent implements OnInit {
 
   respUser: Boolean;
   group: string
+  screening:Screening
   options: string[] = ['true', 'false'];
   userAnswer: UserAnswer = {
 
@@ -42,7 +46,7 @@ export class QuestiontwoComponent implements OnInit {
 
   animal: Animal;
   constructor(private questiontwoSelectorService: QuestiontwoSelectorService,
-    private router: Router, private route: ActivatedRoute, private animalService: AnimalService) {
+    private router: Router, private route: ActivatedRoute, private animalService: AnimalService, private preScreeningService : PreScreeningService) {
     const idAnimalUrl = this.route.snapshot.params['IdAnimal'];
     if (idAnimalUrl) {
       localStorage.setItem('idAnimal', idAnimalUrl);
@@ -79,18 +83,24 @@ export class QuestiontwoComponent implements OnInit {
       this.userAnswer.userId = idAnimalLocalStorage
 
       if (this.question.IsLast == true || this.question?.Id == "" || this.userAnswer.value == true) {
-        this.questiontwoSelectorService.showMessage('Triagem criada!' + this.question.Message)
+        this.questiontwoSelectorService.showMessage('Triagem criada!' + this.screening.Color)
         this.router.navigate(['/animal'])
 
-      }
+      } if (this.userAnswer.value == true)
+        this.questiontwoSelectorService.showMessage('Triagem criada!' + this.screening.Color)
+
+      
 
     }
 
     )
   }
 
- 
-
+  appointment(preScreening: PreScreening) {
+    this.preScreeningService.appointment(preScreening).subscribe(prescreenings => {
+      
+    })
+  }
 
   getgroup(group) {
     this.animalService.getAnimalById(group).subscribe(res => {
