@@ -69,8 +69,7 @@ export class QuestiontwoComponent implements OnInit {
   getQuestionByGroup(group) {
     var idAnimalLocalStorage = localStorage.getItem('idAnimal')
     this.getAnimalById(idAnimalLocalStorage);
-    console.log('idAnimalLocalStorage' + idAnimalLocalStorage)
-    this.getAnimalById(idAnimalLocalStorage)
+    this.userAnswer.value = this.respUser;
 
     this.questiontwoSelectorService.getQuestionByGroup(group, this.question, this.userAnswer).subscribe(res => {
       this.group = this.question.Group

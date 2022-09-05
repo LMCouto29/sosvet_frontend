@@ -2,9 +2,9 @@
 <mat-card>
     <img [src]="'assets/logo.jpg'" alt="Logo do SOSVET">
     <mat-card-title>Inserir Animal </mat-card-title>
-    <form>
+    <form #loginForm = "ngForm">
         <mat-form-field>
-            <input matInput placeholder="Nome" [(ngModel)]="animal.Name" name="name">
+            <input matInput placeholder="Nome" [(ngModel)]="animal.Name" name="name" required>
         </mat-form-field>
         <mat-form-field>
             <input matInput placeholder="Espécie" [(ngModel)]="animal.Spicies" name="spicies">
@@ -23,7 +23,7 @@
         </mat-form-field>
 
     </form>
-    <button mat-raised-button (click)="createAnimal()" color="primary">
+    <button mat-raised-button (click)="createAnimal()" color="primary" [disabled]="loginForm.form.invalid">
         Salvar
     </button>
 

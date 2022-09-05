@@ -14,7 +14,7 @@ table {
 
 }
 th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
-  padding: 0px;
+  
   border-bottom-width: 1px;
   border-bottom-style: solid;
   color: grey;
