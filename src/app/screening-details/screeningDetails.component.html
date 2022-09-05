@@ -1,0 +1,54 @@
+
+<mat-card class="home mat-elevation-z3">
+    <mat-card-title class="title">
+        <img [src]="'assets/logo.jpg'" alt="Logo do SOSVET">
+    </mat-card-title>
+    <mat-card-subtitle class="subtitle">
+        SoSVeT - Detalhes da Triagem
+    </mat-card-subtitle>
+</mat-card>
+    <br>
+
+        <br>
+    <mat-list role="Dados do Animal">
+        <h3> Dados do Animal :</h3>   
+       <mat-list-item role="listitem">Nome do Animal : {{animal?.Name}} </mat-list-item>
+       <mat-list-item role="listitem">Idade : {{animal?.Age}}</mat-list-item>
+       <mat-list-item role="listitem">Nome do Tutor: {{animal?.Owner}}</mat-list-item>
+       <mat-list-item role="listitem">Contacto do Tutor : {{animal?.Contact}}</mat-list-item>
+     </mat-list>   
+      <mat-card-content>    
+<hr> 
+<br>   
+        <mat-list role="Dados da Triagem">
+            <h3> Dados da Triagem :</h3>   
+           <mat-list-item role="listitem"> Critério de Emergência:&nbsp;{{screening?.Question}} </mat-list-item>
+           <mat-list-item role="listitem">Estado:&nbsp; {{screening?.State}}</mat-list-item>
+           <mat-list-item role="listitem">Prioridade:&nbsp; {{screening?.Priority}}</mat-list-item>
+           <mat-list-item role="listitem">Grupo:&nbsp; {{screening?.Group}}</mat-list-item>
+           <mat-list-item role="listitem">Estado:&nbsp; {{screening?.State}}</mat-list-item>
+           <mat-list-item role="listitem"> Resultado:&nbsp; {{screening?.result}}</mat-list-item>
+           <mat-list-item role="listitem" [ngStyle]="{'background-color': screening?.Color}"> </mat-list-item>    
+         </mat-list>   
+          <mat-card-content>
+    </mat-card-content>
+<br>
+    <button mat-raised-button class = "consulta" (click)="appointment(screening)" color="primary" >
+        Chamar para Consulta
+    </button>
+    
+    <button mat-raised-button class="return"  (click)="cancel()" color="danger" >
+       Voltar à Lista de Espera - Triagem
+    </button>
+    
+    
+    
+  
+
+   
+
+
+
+
+
+

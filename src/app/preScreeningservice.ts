@@ -31,6 +31,14 @@ export class PreScreeningService {
     );
   }
 
+  getPreScreeningById (id: number): Observable<PreScreening> {
+    const url = `${this.baseUrl}/${id}`;
+    return this.http.get<PreScreening>(url).pipe(
+      map((obj) => obj),
+      catchError((e) =>  this.errorHandler(e))
+    ); 
+  }
+
   appointment(prescreening: PreScreening): Observable<PreScreening[]> {
 
     const prescreeningAppointment = {} as PreScreeningAppointment;
@@ -43,7 +51,7 @@ export class PreScreeningService {
     return this.http.post<PreScreening[]>(url, prescreeningAppointment, httpOptions).pipe(
       map((obj) => {
         obj;
-        this.showMessage('Animal chamado para a consulta!')
+        this.showMessage('Animal chamado para Triagem')
       }),
       catchError((e) => this.errorHandler(e))
     )

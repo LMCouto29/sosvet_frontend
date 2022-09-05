@@ -4,6 +4,7 @@ table {
 
 .edit {
   margin-right: 10px;
+  
 }
 
 .edit > i {
@@ -11,6 +12,15 @@ table {
 }
 
 .delete > i {
-  color: #e35e6b;
+  color: gray;
 }
+
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+ 
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  color: grey;
+}
+
+
 

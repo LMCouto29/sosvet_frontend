@@ -11,9 +11,15 @@ table {
 }
 
 .delete > i {
-  color:grey;
+  color:gray;
 }
 .material-symbols-outlined{
   color:#e35e6b
 }
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  color: grey;
+}
+
 

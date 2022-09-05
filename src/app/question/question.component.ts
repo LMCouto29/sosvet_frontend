@@ -15,7 +15,7 @@ import { AnimalService } from '../animal/animal.service';
 export class QuestionComponent implements OnInit {
   respUser: Boolean;
 
-  options: string[] = [ 'true', 'false'];
+  options: boolean[] = [ true, false];
   @Input() IdAnimal: "";
 
   userAnswer: UserAnswer = {
@@ -64,16 +64,19 @@ export class QuestionComponent implements OnInit {
     this.userAnswer.questionId = this.question.Id
     this.userAnswer.userId = idAnimalLocalStorage
     this.questionService.getQuestion(this.question, this.userAnswer).subscribe(res => {
-      this.question = res
-      
-      if (this.question.IsLast == true || this.userAnswer.value == false) {
-        this.questionService.showMessage('Pré-Triagem criada!' + this.question.Message)
-        this.router.navigate(['/animal'])
+    this.question = res
 
-      } if (this.userAnswer.value == true)
+
+      if (this.question.Id == "000000000000000000000000" && this.userAnswer.value == false) {
+        this.questionService.showMessage('Pré-Triagem criada!')
+        this.router.navigate(['/preScreening'])
+
+        
+      } if (this.userAnswer.value == true){
         this.questionService.showMessage('Pré-Triagem criada!' + this.question.Message)
 
-      this.router.navigate(['/question'])
+      this.router.navigate(['/Screening'])
+    }
 
     })
   }

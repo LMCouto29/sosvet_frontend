@@ -37,6 +37,7 @@ export class ScreeningService {
   }
 
 
+
   appointment(screening: Screening): Observable<Screening[]> {
 
     const screeningAppointment = {} as ScreeningAppointment;
@@ -55,6 +56,15 @@ export class ScreeningService {
     )
     
   }
+
+  getScreeningById (id: number): Observable<Screening> {
+    const url = `${this.baseUrl}/${id}`;
+    return this.http.get<Screening>(url).pipe(
+      map((obj) => obj),
+      catchError((e) =>  this.errorHandler(e))
+    ); 
+  }
+
 
   delete(id: number): Observable<Screening> {
     const url = `${this.baseUrl}/${id}`;

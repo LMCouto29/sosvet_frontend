@@ -1,3 +1,4 @@
+<img [src]="'assets/logo.jpg'" alt="Logo do SOSVET">
 <div class="mat-elevation-z4">
 
   <mat-card *ngIf="preScreenings?.length == 0">
@@ -40,12 +41,6 @@
             medical_services&nbsp;
           </span>
         </a>
-
-        <a routerLink="/preScreeningDetails/{{row.IdAnimal}}" class="delete">
-          <i class="material-icons">
-            info&nbsp;
-          </i>
-        </a> 
       </td>
     </ng-container>
 

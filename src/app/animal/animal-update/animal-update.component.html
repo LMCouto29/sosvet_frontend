@@ -1,8 +1,8 @@
 <mat-card>
+    <img [src]="'assets/logo.jpg'" alt="Logo do SOSVET">
     <mat-card-title>Atualizar Dados do Animal</mat-card-title>
     
     <form *ngIf="animal">
-
         <mat-form-field>
             <input matInput placeholder="Nome"
                 [(ngModel)]="animal.Name" name="name">
@@ -28,9 +28,10 @@
                 [(ngModel)]="animal.Contact" name="contact">
         </mat-form-field>
     </form>
-    <button mat-raised-button (click)="updateAnimal()" color="primary">
+    <button mat-raised-button (click)="updateAnimal()" color="primary" >
         Atualizar
     </button>
+    
     
     <button mat-raised-button (click)="cancel()">
         Cancelar

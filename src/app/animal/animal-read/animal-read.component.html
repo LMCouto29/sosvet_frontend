@@ -36,15 +36,15 @@
     <ng-container matColumnDef="action">
       <th mat-header-cell *matHeaderCellDef>Ações  </th>
       <td mat-cell *matCellDef="let row">
-        <a routerLink="/animal/update/{{ row.IdAnimal }}" class="PreScreening">
+        <a routerLink="/animal/update/{{ row.IdAnimal }}" class="edit">
           <i class="material-icons">
-            edit &nbsp; 
+            edit &nbsp;&nbsp;&nbsp;
           </i>
         </a>
         
         <a routerLink="/question/{{ row.IdAnimal}}" class="PreScreening">
           <span class="material-symbols-outlined">
-            medical_services&nbsp; 
+            medical_services &nbsp;&nbsp;&nbsp; 
           </span>
         </a>
 

@@ -23,9 +23,22 @@
   size: large;
   font-size: 1.2rem;
   width: 15rem;
-  margin: top 30px;
+  margin-top:  80px;
+}
+.mat-list[_ngcontent-mag-c117] {
+  border-collapse: separate;
+  color:grey
 }
 
+.h3{
+  font-weight:bold;
+}
+
+.mat-list-base .mat-list-item {
+  
+  
+  color:gray
+}
 
 .radio-group {
   display: flex;
@@ -39,9 +52,14 @@
   margin: 5px;
   margin-top: 0.8rem;
 }
+.question {
+  font-size: large;
+  margin-top: 3rem;
+  color:gray
+}
 
 .div-info-animal {
-  margin-top: 20%;
+  margin-top: 180px;
   margin-left: 72%;
 }
 
@@ -51,6 +69,14 @@ border-collapse: separate;
 
 }
 
+.hr{
+
+  border-color: grey;
+  margin-top: 0;
+  
+
+}
+  
 .label-codigo-animal {
   font-size: 0.7rem;
   margin-top: 10px;

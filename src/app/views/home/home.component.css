@@ -7,6 +7,8 @@
 .mat-card-title {
   display: block;
   width: 300px;
+  
+ 
 }
 
 .home .subtitle {
@@ -27,6 +29,8 @@ a {
   width: 30%;
   padding: 10px;
   height: 300px;
+  color: gray;
+  margin-top: 170px;
 }
 
 .row:after {
@@ -41,3 +45,12 @@ a {
   transition: background .4s cubic-bezier(.25,.8,.25,1),box-shadow 280ms cubic-bezier(.4,0,.2,1);
   cursor: pointer;
 }
+
+.mat-h4, .mat-subheading-1, .mat-typography .mat-h4, .mat-typography .mat-subheading-1, .mat-typography h4 {
+  font: 400 15px/24px Roboto,"Helvetica Neue", sans-serif;
+  letter-spacing: normal;
+  margin: 0 0 16px;
+  color: gray;
+}
+
+

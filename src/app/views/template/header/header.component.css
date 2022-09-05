@@ -1,6 +1,8 @@
 .header {
-  display: flex;
+ 
+  position: fixed; /* Set the navbar to fixed position */
   align-items: center;
+
   /* background-color: gray; */
 }
 

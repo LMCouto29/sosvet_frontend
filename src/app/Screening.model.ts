@@ -1,14 +1,18 @@
 export interface Screening {
     IdAnimal?: string
     objectId: string
-    state: string
+    State: string
     result:  string
-    datePreScreening: string
-    animalname: string
-    ownerName:string
-    ownerContact:string
-    questao: string
-    resposta: string
-    Color : string
+    ScreeningDate: string
+    AnimalName: string
+    OwnerName:string
+    OwnerContact:string
+    Question: string
+    Resposta: string
     IdScreening: string
+    Color:string
+    Priority : string
+    Group : String
+ 
 }
+

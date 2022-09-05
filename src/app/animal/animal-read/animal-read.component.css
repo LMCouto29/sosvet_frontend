@@ -13,11 +13,16 @@ table {
   border-color: gray;
 
 }
-
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+  padding: 0px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  color: grey;
+}
 
 
 .edit > i {
-  color: #d9cd26;
+  color: grey;
 }
 
 .delete > i {
@@ -28,9 +33,7 @@ table {
   margin-right: 10px;
 }
 
-.edit > i {
-  color: #d9cd26;
-}
+
 .material-symbols-outlined{
 
   color: #e35e6b

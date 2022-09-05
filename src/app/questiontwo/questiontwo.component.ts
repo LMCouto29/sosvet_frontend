@@ -3,8 +3,6 @@ import { UserAnswer } from './user-answer.model';
 import { QuestiontwoSelectorService } from '../questiontwo -selector/questiontwoselector.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { HttpParams } from '@angular/common/http';
-import { TmplAstRecursiveVisitor } from '@angular/compiler';
 import { Animal } from '../animal/animal.model';
 import { AnimalService } from '../animal/animal.service';
 import { PreScreeningService } from './../preScreeningservice'
@@ -21,7 +19,7 @@ export class QuestiontwoComponent implements OnInit {
   respUser: Boolean;
   group: string
   screening:Screening
-  options: string[] = ['true', 'false'];
+  options: boolean[] = [true, false];
   userAnswer: UserAnswer = {
 
     value: false,
@@ -77,18 +75,20 @@ export class QuestiontwoComponent implements OnInit {
     this.questiontwoSelectorService.getQuestionByGroup(group, this.question, this.userAnswer).subscribe(res => {
       this.group = this.question.Group
       this.question = res
-
       this.userAnswer.value = this.respUser;
       this.userAnswer.questionId = this.question.Id
       this.userAnswer.userId = idAnimalLocalStorage
 
-      if (this.question.IsLast == true || this.question?.Id == "" || this.userAnswer.value == true) {
-        this.questiontwoSelectorService.showMessage('Triagem criada!' + this.screening.Color)
-        this.router.navigate(['/animal'])
+      if (this.question.Id == "000000000000000000000000" && this.userAnswer.value == false) {
+        this.questiontwoSelectorService.showMessage('Triagem criada!')
+        this.router.navigate(['/Screening'])
 
-      } if (this.userAnswer.value == true)
-        this.questiontwoSelectorService.showMessage('Triagem criada!' + this.screening.Color)
+        
+      } if (this.question.Id == "000000000000000000000000" && this.userAnswer.value == true){
+        this.questiontwoSelectorService.showMessage('Triagem criada!')
 
+      this.router.navigate(['/Screening'])
+    }
       
 
     }

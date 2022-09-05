@@ -30,7 +30,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { HomeComponent } from './views/home/home.component';
 import { PreScreeningReadComponent } from './preScreening-read/preScreening-read.component';
 import { ScreeningReadComponent } from './Screening-read/Screening-read.component';
-import { PreScreeningDetailsComponent } from './preScreening-details/preScreeningDetails.component';
+import { ScreeningDetailsComponent } from './screening-details/screeningDetails.component';
 import { AnimalReadComponent } from './animal/animal-read/animal-read.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
@@ -60,7 +60,7 @@ import { MatGridListModule } from '@angular/material/grid-list'
     HomeComponent,
     QuestiontwoComponent,
     PreScreeningReadComponent,
-    PreScreeningDetailsComponent,
+    ScreeningDetailsComponent,
     QuestiontwoselectorComponent,
     ScreeningReadMaterialComponent,
     ScreeningReadComponent,

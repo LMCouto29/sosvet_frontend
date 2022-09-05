@@ -17,41 +17,56 @@
   margin-top: 180px;
   
 }
-.mat-h2, .mat-title, .mat-typography .mat-h2, .mat-typography .mat-title, .mat-typography h2 {
-  font: 500 20px/32px Roboto,"Helvetica Neue", sans-serif;
-  letter-spacing: normal;
-  margin: 0 0 16px;
-  color: gray;
+
+.return{
+
+  margin-left: 17px;
+  
 }
-.mat-list-base .mat-list-item {
-  color: gray;
+
+
+.mat-list-base .mat-list-item .mat-list-item-content, .mat-list-base .mat-list-option .mat-list-item-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 16px;
+    position: relative;
+    height: inherit;
 }
-.h3{
+
+.mat-list-base .mat-list-item, .mat-list-base .mat-list-option {
+    display: block;
+    height: 48px;
+    -webkit-tap-highlight-color: #f44336;
+    color: gray;
+    width: 100%;
+    padding: 0;
+}
+
+.mat-h3, .mat-subheading-2, .mat-typography .mat-h3, .mat-typography .mat-subheading-2, .mat-typography h3 {
   font: 400 16px/28px Roboto,"Helvetica Neue", sans-serif;
   letter-spacing: normal;
   margin: 0 0 16px;
   color: gray;
-  font-weight: bold;
+  font-weight: bolder;
 }
 
+
 .btn {
-  align-self: center;
+  align-items: flex-end;
   size: large;
   font-size: 1.2rem;
   width: 15rem;
-  margin-left: 50px;
   margin: top 30px;
-  background-color: #6c6c6c
-  
 }
 
 
 .radio-group {
   display: flex;
   flex-direction: column;
-  margin:  0 15px;
+  margin: 15px 0;
   align-items: flex-start;
-  
   
 }
 

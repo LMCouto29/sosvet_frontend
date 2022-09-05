@@ -73,7 +73,7 @@ export class ScreeningReadMaterialDataSource extends DataSource<Screening> {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
         case 'IdAnimal': return compare(a.IdAnimal, b.IdAnimal, isAsc);
-        case 'ownerName': return compare(+a.ownerName, +b.ownerName, isAsc); // falar com o Marcus
+        case 'ownerName': return compare(+a.OwnerName, +b.OwnerName, isAsc); // falar com o Marcus
         default: return 0;
       }
     });
