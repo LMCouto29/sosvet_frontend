@@ -22,5 +22,36 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
   color: grey;
 }
 
+.mat-column-animalname {
+  flex: none;
+  width: 25%;
+}
+
+.mat-column-ownername {
+  flex: none;
+  width: 15%;
+}
+
+.mat-column-result {
+  flex: none;
+  width: 20%;
+}
+
+.mat-column-state {
+  flex: none;
+  width: 15%;
+}
+
+.mat-column-action {
+  flex: none;
+  width: 15%;
+}
+
+.mat-column-color {
+  flex: none;
+  width: 10%;
+}
+
+
 
 

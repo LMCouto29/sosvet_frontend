@@ -35,16 +35,20 @@
   position: fixed
 }
 ::ng-deep .mat-tab-group{
-  margin-top:55px !important;
+  margin: top 52px !important;
 }
 
 ::ng-deep .mat-tab-header{
       z-index: 999;
       width:100vw;
       position: fixed  !important;
-      background-color: red !important;
+      background-color: gray !important;
 }
 ::ng-deep .mat-tab-body-wrapper{
     position: relative !important;
     margin-top:55px;
+}
+.content[_ngcontent-sgh-c186] {
+  padding: 16px;
+  margin-top: 52px;
 }

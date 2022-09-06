@@ -1,3 +1,4 @@
+
 .home .title {
   font-size: 1.5rem;
   font-weight: 300;
@@ -16,6 +17,13 @@
 .mat-elevation-z2 {
   margin-top: 180px;
   
+}
+
+.mat-h2, .mat-title, .mat-typography .mat-h2, .mat-typography .mat-title, .mat-typography h2 {
+  font: 500 20px/32px Roboto,"Helvetica Neue", sans-serif;
+  letter-spacing: normal;
+  margin: 0 0 16px;
+  color: gray;
 }
 
 .btn {

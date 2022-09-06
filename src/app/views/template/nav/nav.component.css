@@ -16,5 +16,17 @@
 .content {
   padding: 16px;
   background-color: #FFF;
-  margin-top: 5%;
+  margin-top: 3%;
+}
+
+
+.mat-list-base .mat-list-item .mat-list-item-content, .mat-list-base .mat-list-option .mat-list-item-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 15px;
+  padding-top: 50px;
+  position: relative;
+  height: inherit;
 }

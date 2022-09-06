@@ -2,32 +2,80 @@ table {
   width: 100%;
 }
 
+.content[_ngcontent-onr-c186] {
+  padding: 16px;
+  background-color: #FFF;
+  margin-top: 3%;
+}
 .mat-column-name {
   flex: none;
-  width: 10%;
+  width: 20%;
 }
 
 .mat-column-breed {
   flex: none;
-  width: 10%;
+  width: 15%;
 }
 
 .mat-column-spicies {
   flex: none;
-  width: 10%;
+  width: 15%;
 }
 
 .mat-column-owner {
   flex: none;
-  width: 10%;
+  width: 15%;
 }
 
 .mat-column-contact {
   flex: none;
-  width: 10%;
+  width: 15%;
 }
 
 .mat-column-action {
   flex: none;
-  width: 10%;
+  width: 20%;
+}
+
+.edit {
+  margin-right: 10px;
+}
+
+.mat-elevation-z4{
+
+  border-color: gray;
+
+}
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+  
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  color: grey;
+}
+
+
+.edit > i {
+  color: grey;
+}
+
+.delete > i {
+  color: #e35e6b;
+}
+
+.edit {
+  margin-right: 10px;
+}
+
+
+.material-symbols-outlined{
+
+  color: #e35e6b
+}
+
+.search-input-full-width {
+  width: 30%;
+}
+.mat-card{
+
+  border-color: #e35e6b;
 }
