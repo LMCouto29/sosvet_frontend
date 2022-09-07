@@ -5,7 +5,7 @@
 }
 
 .mat-card-title {
-  display: block;
+  display: flex;
   width: 300px;
   
  
@@ -26,11 +26,12 @@ a {
 
 .column {
   float: left;
-  width: 30%;
+  width: 29%;
   padding: 10px;
   height: 300px;
   color: gray;
-  margin-top: 120px;
+  margin-top: 150px;
+  align-items: center;
 }
 
 .row:after {
