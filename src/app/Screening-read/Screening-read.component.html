@@ -1,6 +1,5 @@
-<img [src]="'assets/logo.jpg'" alt="Logo do SOSVET">
 <div class="mat-elevation-z4">
-
+  <img [src]="'assets/logo.jpg'" alt="Logo do SOSVET">
   <mat-card *ngIf="Screenings?.length == 0">
     <mat-card-title>
       <span class="material-symbols-outlined">
@@ -68,4 +67,7 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+
+ <qrcode qrdata ="https://sosvet-frontend.vercel.app/Waitinglist">  </qrcode>
+
 </div>
