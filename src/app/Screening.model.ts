@@ -2,7 +2,7 @@ export interface Screening {
     IdAnimal?: string
     objectId: string
     State: string
-    result:  string
+    Result:  string
     ScreeningDate: string
     AnimalName: string
     OwnerName:string

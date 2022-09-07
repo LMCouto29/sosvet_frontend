@@ -10,15 +10,16 @@ import { Component, Input, OnInit, Output } from "@angular/core";
 })
 export class AnimalUpdateComponent implements OnInit {
 
-  animal: Animal; 
+  animal: Animal;
+  Clean: string
 
   constructor(
     private animalService: AnimalService,
     private router: Router,
     private route: ActivatedRoute
-  ) {}
+  ) { }
 
-  ngOnInit(): void {    
+  ngOnInit(): void {
     const id = this.route.snapshot.params['IdAnimal'];
     this.getById(id);
   }

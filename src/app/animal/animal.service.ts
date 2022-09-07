@@ -56,7 +56,10 @@ export class AnimalService {
   }
 
   update(animal: Animal): Observable<Animal> {
-    const url = `${this.baseUrl}/${animal.IdAnimal}`;
+    const idAnimalURL = animal.IdAnimal;
+    animal.IdAnimal = null;
+
+    const url = `${this.baseUrl}/${idAnimalURL}`;
     return this.http.put<Animal>(url, animal).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
