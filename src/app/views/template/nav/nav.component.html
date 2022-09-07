@@ -1,43 +1,31 @@
-<mat-sidenav-container class="container" *ngIf="showHead">
-  <mat-sidenav class="sidenav" mode="side" opened 
-  fixedInViewport=true fixedTopGap="64">
-    <mat-nav-list class="nav-list">
-      <a mat-list-item routerLink="/">
-        <i class="material-icons">
-          home
-        </i>
-        Início
-      </a>
-      <a mat-list-item routerLink="/animal">
-        <i class="material-icons">
-          <span class="material-symbols-outlined">
-            sound_detection_dog_barking
-          </span>
-        </i>
-        Registar animal
-      </a>
-      <a mat-list-item routerLink="/preScreening">
-        <i class="material-icons">
-          <span class="material-symbols-outlined">
-            local_hospital
-          </span>
-        </i>
-        Listagem da Pré-Triagem
-      </a>
-      <a mat-list-item routerLink="/Screening">
-        <i class="material-icons">
-          <span class="material-symbols-outlined">
-            medical_services
-          </span>
-        </i>
-        Listagem de Triagem
-      </a>
-    </mat-nav-list>
-  </mat-sidenav>
-  <!-- Main content-->
-  <mat-sidenav-content class="content">
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<mat-drawer-container>
+  <mat-drawer #drawer mode="side" disableClose="true" opened="true" class="mat-drawer-menu">
 
-<router-outlet *ngIf="!showHead"></router-outlet>
+    <mat-nav-list>
+      <mat-list-item>
+        <mat-icon mat-list-icon (click)="isExpanded = !isExpanded">menu</mat-icon>
+        <h4 mat-line *ngIf="isExpanded"></h4>
+      </mat-list-item>
+      <mat-list-item routerLink="/">
+        <mat-icon mat-list-icon>home</mat-icon>
+        <h4 mat-line *ngIf="isExpanded">Home</h4>
+      </mat-list-item>
+      <mat-list-item routerLink="/animal">
+        <mat-icon mat-list-icon>local_hospital</mat-icon>
+        <h4 mat-line *ngIf="isExpanded">Registar animal</h4>
+      </mat-list-item>
+      <mat-list-item routerLink="/preScreening">
+        <mat-icon mat-list-icon>medical_services</mat-icon>
+        <h4 mat-line *ngIf="isExpanded">Listagem da Pré-Triagem</h4>
+      </mat-list-item>
+      <mat-list-item routerLink="/Screening">
+        <mat-icon mat-list-icon>folder_shared</mat-icon>
+        <h4 mat-line *ngIf="isExpanded">Listagem de Triagem</h4>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+
+  <div class="sidenav-content">
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>

@@ -9,8 +9,18 @@ import { Component, OnInit } from '@angular/core';
 export class NavComponent implements OnInit {
 
   showHead: boolean = true;
+  showFiller = false;
+  isExpanded = false;
 
   ngOnInit() {
+  }
+
+  collapseMenu() {
+    if (!this.isExpanded) {
+      this.isExpanded = true;
+    } else {
+      this.isExpanded = false;
+    }
   }
 
   // constructor(private router: Router) {
