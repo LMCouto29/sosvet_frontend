@@ -46,3 +46,8 @@ body {
 .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
   border-color: blue;
 }
+
+.mat-drawer-container {
+  background-color: white;
+  color: rgba(0,0,0,.87);
+}

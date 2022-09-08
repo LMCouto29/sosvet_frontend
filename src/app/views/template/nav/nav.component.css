@@ -1,5 +1,5 @@
 .sidenav {
-  background-color: #6c6c6c;
+  background-color: #ffff;
   width: 200px;
   top: 15%;
 
@@ -43,8 +43,9 @@
   height: 100%;
   align-items: center;
   justify-content: center; */
-  height: 80vh;
-  margin-top: 5%;
+  height: 150vh;
+  padding-left: 15px;  /*se fornecessário alterar*/
+  margin-top: 8%;
 }
 
 .example-sidenav {
