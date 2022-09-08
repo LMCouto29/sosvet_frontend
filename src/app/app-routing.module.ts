@@ -11,7 +11,7 @@ import { PreScreeningReadComponent } from './preScreening-read/preScreening-read
 import { QuestiontwoselectorComponent } from './questiontwo -selector/questiontwoselector.component';
 import { ScreeningReadComponent } from './Screening-read/Screening-read.component';
 import { ScreeningDetailsComponent } from './screening-details/screeningDetails.component';
-import { ScreeningwaitinglistComponent } from './Screening-waitinglist/Screening-waitinglist.component';
+
 
 const routes: Routes = [
   {
@@ -62,10 +62,7 @@ const routes: Routes = [
     path: "Screening",
     component: ScreeningReadComponent
   },
-  {
-    path: "WaitingList",
-    component: ScreeningwaitinglistComponent
-  },
+
 
   {
     path: "login",

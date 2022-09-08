@@ -42,10 +42,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { LoginComponent } from './views/login/login.component';
 import { MatIconModule } from '@angular/material/icon';
 import { QRCodeModule } from 'angularx-qrcode';
-
 import { MatGridListModule } from '@angular/material/grid-list'
-import { ScreeningwaitinglistComponent } from './Screening-waitinglist/Screening-waitinglist.component';
-import { ScreeningwaitinglistMaterialComponent } from './Screening-waitinglist-material/Screening-read-material.component';
+
 
 
 @NgModule({
@@ -69,8 +67,7 @@ import { ScreeningwaitinglistMaterialComponent } from './Screening-waitinglist-m
     ScreeningReadComponent,
     LoginComponent,
     PreScreeningReadMaterialComponent,
-    ScreeningwaitinglistComponent,
-    ScreeningwaitinglistMaterialComponent,
+   
     
   ],
   imports: [
