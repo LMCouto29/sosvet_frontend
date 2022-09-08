@@ -36,6 +36,17 @@ body {
   cursor: pointer;
 }
 
+@media screen and (max-width: 992px) {
+  .appointment {
+    font-size: 1.6rem;
+    margin-left: 2%;
+    cursor: pointer;
+    scale: 1;
+    
+  }
+}
+
+
 .mat-radio-button.mat-accent .mat-radio-inner-circle,
 .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
 .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple,
