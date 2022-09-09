@@ -20,7 +20,7 @@
         <br>
         <mat-card-content>
             <mat-card-content class="question">
-                <h2> Pré-Triagem :</h2>   {{question.Description}}
+                <h2> Triagem - {{question.Group}}:</h2>   {{question.Description}}
                 <mat-radio-group aria-labelledby="radio-button-questions" class="radio-group" [(ngModel)]="respUser"
                     *ngIf="question.Description">
                     <mat-radio-button class="item-radio-button" *ngFor="let option of options" [value]="option">
